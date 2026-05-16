@@ -111,7 +111,9 @@ body::before{
 }
 
 .nav-logo{display:flex;align-items:center;gap:12px;}
-.nav-logo img{height:52px;width:auto;object-fit:contain;}
+.nav-logo-combo{display:flex;align-items:center;gap:10px;}
+.nav-logo-combo img.ca-badge{height:46px;width:auto;object-fit:contain;}
+.nav-logo-combo img.firm-badge{height:48px;width:auto;object-fit:contain;}
 .nav-logo .firm-name{
   font-family:'Cormorant Garamond',serif;
   font-size:22px;font-weight:700;
@@ -423,7 +425,7 @@ section{padding:120px 0;}
 .feat-sub{font-size:12px;color:var(--text-light);margin-top:2px;}
 
 
-/* ===== SERVICES SECTION (PIC-4 STYLE) ===== */
+/* ===== SERVICES SECTION ===== */
 #services {
   background: linear-gradient(180deg, var(--lighter-bg) 0%, #EDF2FB 100%);
 }
@@ -751,8 +753,18 @@ footer{
   gap:48px;margin-bottom:56px;
 }
 .footer-brand{}
-.footer-logos{display:flex;gap:12px;align-items:center;margin-bottom:20px;}
-.footer-logos img{height:48px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:0.9;}
+.footer-logos{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.footer-logo-combo-mask {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#ffffff;
+  padding:6px 14px;
+  border-radius:12px;
+  box-shadow:var(--shadow-sm);
+}
+.footer-logo-combo-mask img.ca-badge-footer{height:44px;width:auto;object-fit:contain;}
+.footer-logo-combo-mask img.firm-badge-footer{height:46px;width:auto;object-fit:contain;}
 .footer-brand p{font-size:14px;line-height:1.85;color:rgba(255,255,255,0.6);max-width:300px;margin-bottom:28px;}
 
 .footer-social{display:flex;gap:12px;}
@@ -907,7 +919,10 @@ footer{
 
 <nav id="navbar">
   <div class="nav-logo">
-    <img src="pic2.png" alt="Jay Mehta & Co. Logo">
+    <div class="nav-logo-combo">
+      <img src="pic1.png" alt="CA India Official Brand Badge" class="ca-badge">
+      <img src="pic2.png" alt="Jay Mehta & Co. Icon" class="firm-badge">
+    </div>
     <div>
       <div class="firm-name">Jay Mehta & Co.</div>
       <div class="firm-sub">Chartered Accountants</div>
@@ -921,7 +936,7 @@ footer{
     <a href="#contact">Contact</a>
   </div>
   <div class="nav-cta">
-    <a href="#contact" class="btn-nav-primary">Free Consultation</a>
+    <a href="tel:+918690611515" class="btn-nav-primary">Call Now</a>
   </div>
   <div class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
@@ -963,7 +978,7 @@ footer{
         </p>
 
         <div class="hero-btns">
-          <a href="#contact" class="btn-primary"><span>📞 Book Free Consultation</span></a>
+          <a href="tel:+918690611515" class="btn-primary"><span>📞 Call Office Directly</span></a>
           <a href="#services" class="btn-outline">View Services ↓</a>
         </div>
 
@@ -1065,7 +1080,7 @@ footer{
       <div class="about-img-stack reveal-left">
         <img src="pic3.jpg" alt="CA Jay Mehta Office" class="about-img-main">
         <div class="about-experience-badge">
-        <div class="exp-num">9+</div>
+          <div class="exp-num">9+</div>
           <div class="exp-label">Years of<br>Excellence</div>
         </div>
       </div>
@@ -1121,7 +1136,7 @@ footer{
         </div>
 
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="#contact" class="btn-primary"><span>📞 Book a Consultation</span></a>
+          <a href="tel:+918690611515" class="btn-primary"><span>📞 Speak with an Expert</span></a>
         </div>
       </div>
     </div>
@@ -1138,8 +1153,8 @@ footer{
       <div>
         <p class="section-desc">Comprehensive financial & legal solutions tailored for businesses across India. Each service delivered with expertise, accuracy and care.</p>
         <br>
-        <a href="#contact" class="btn-outline" style="display:inline-flex;">
-          <span>Request custom advisory →</span>
+        <a href="tel:+918690611515" class="btn-outline" style="display:inline-flex;">
+          <span>Request Custom Call →</span>
         </a>
       </div>
     </div>
@@ -1171,8 +1186,8 @@ footer{
               <div class="svc-list-item">GST Refund Claims</div>
               <div class="svc-list-item">Department Representation</div>
             </div>
-            <a href="#contact" class="sc-cta" id="svcCtaLink">
-              <span id="svcCtaText">Consult GST Now</span>
+            <a href="tel:+918690611515" class="sc-cta" id="svcCtaLink">
+              <span id="svcCtaText">Call for GST Setup</span>
             </a>
           </div>
           <div class="svc-visual-block">
@@ -1185,7 +1200,7 @@ footer{
     <div style="text-align:center;margin-top:64px;">
       <p style="color:var(--text-mid);font-size:17px;margin-bottom:24px;">Not sure which service you need? Let's have a free conversation.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="#contact" class="btn-primary"><span>📞 Book Free Consultation</span></a>
+        <a href="tel:+918690611515" class="btn-primary"><span>📞 Call for Free Evaluation</span></a>
       </div>
     </div>
   </div>
@@ -1286,7 +1301,7 @@ footer{
       </div>
 
     <div style="text-align:center;margin-top:48px;">
-      <a href="#contact" class="btn-primary"><span>Secure Your Onboarding Consultation</span></a>
+      <a href="tel:+918690611515" class="btn-primary"><span>📞 Call to Initiate Onboarding</span></a>
     </div>
   </div>
 </section>
@@ -1325,7 +1340,7 @@ footer{
     <h2>Ready to Secure Your<br>Financial Future?</h2>
     <p>Book a free consultation today. No obligations, just expert advice.</p>
     <div class="cta-banner-btns">
-      <a href="#contact" class="btn-cta-white">📞 Free Consultation</a>
+      <a href="tel:+918690611515" class="btn-cta-white">📞 Call For Free Consultation</a>
     </div>
   </div>
 </div>
@@ -1420,6 +1435,9 @@ footer{
             <label>Your Message</label>
             <textarea placeholder="Tell us about your requirements, business type, or any specific questions..."></textarea>
           </div>
+          <div style="margin-bottom:16px;">
+            <p style="font-size:12px;color:var(--text-light);">Alternatively, connect immediately over <a href="https://wa.me/918690611515" style="color:var(--blue);font-weight:600;" target="_blank">WhatsApp: +91 86906 11515</a></p>
+          </div>
           <button type="submit" class="btn-submit">📨 Send Inquiry</button>
         </form>
       </div>
@@ -1432,7 +1450,10 @@ footer{
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logos">
-          <img src="pic2.png" alt="Jay Mehta & Co Logo" style="height:56px;filter:none;opacity:1;">
+          <div class="footer-logo-combo-mask">
+            <img src="pic1.png" alt="CA India Official Brand Badge" class="ca-badge-footer">
+            <img src="pic2.png" alt="Jay Mehta & Co Logo" class="firm-badge-footer">
+          </div>
         </div>
         <p>Jay Mehta & Co. is a premier Chartered Accountancy firm in Surat, Gujarat. We deliver excellence in taxation, audit, corporate and international financial services.</p>
         <div class="footer-social">
@@ -1477,6 +1498,10 @@ footer{
           <li>📍 Surat, Gujarat, India</li>
           <li>🕐 Mon–Sat: 10 AM–7 PM</li>
         </ul>
+        <br>
+        <a href="https://wa.me/918690611515" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;padding:12px 20px;border-radius:12px;font-size:13px;font-weight:700;margin-top:8px;">
+          <span>WhatsApp Now</span>
+        </a>
       </div>
     </div>
 
@@ -1489,7 +1514,9 @@ footer{
 
 <a href="https://wa.me/918690611515?text=Hello%20CA%20Jay%20Mehta!%20I%20want%20to%20book%20a%20free%20consultation." class="wa-float" target="_blank">
   <div class="wa-float-btn">
-    <span class="wa-icon">💬</span>
+    <span class="wa-icon">
+      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor; display: block;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66 1.01 3.298 1.558 5.347 1.559 5.423 0 9.834-4.412 9.837-9.838.001-2.628-1.021-5.1-2.88-6.961C17.034 2.052 14.561 1.03 12.012 1.03c-5.424 0-9.835 4.412-9.838 9.839-.001 2.112.564 4.15 1.636 5.92l-.993 3.626 3.832-.981zM16.711 13.9c-.27-.135-1.602-.79-1.849-.882-.247-.091-.427-.136-.607.135-.18.27-.697.882-.855 1.062-.158.18-.315.203-.585.068-.27-.135-1.14-.42-2.172-1.341-.803-.715-1.345-1.6-1.503-1.871-.158-.27-.017-.416.118-.551.121-.122.27-.315.405-.472.135-.158.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.607-1.463-.831-2.003-.219-.527-.44-.455-.607-.463-.158-.007-.338-.009-.517-.009-.18 0-.473.067-.72.337-.247.27-.945.923-.945 2.25s.967 2.61 1.102 2.79c.135.18 1.902 2.904 4.609 4.074.645.278 1.148.445 1.54.57.649.206 1.24.177 1.707.107.52-.078 1.602-.656 1.828-1.29.225-.633.225-1.18.157-1.291-.067-.113-.247-.203-.517-.339z"/></svg>
+    </span>
     <span class="wa-text">WhatsApp Us</span>
   </div>
 </a>
@@ -1504,56 +1531,56 @@ const servicesData = [
   {
     title: "GST Advisory & Compliance",
     desc: "Professional GST consultancy solutions including registration, filing, compliance management, and litigation support for businesses of all scales.",
-    cta: "Consult GST Setup Now",
+    cta: "Call for GST Setup Now",
     slug: "GST Advisory",
     points: ["GST Registration & Amendment", "Monthly/Quarterly Return Filing", "Annual GSTR-9 & Audit", "GST Notices & Litigation", "Input Tax Credit Optimization", "E-way Bill & E-invoice Setup", "GST Refund Claims", "Department Representation"]
   },
   {
     title: "Accounting & Bookkeeping",
     desc: "Accurate, real-time bookkeeping, systematic corporate tracking, and insightful financial reporting metrics designed to keep your core business updated.",
-    cta: "Request Accounting Setup",
+    cta: "Call for Accounting Strategy",
     slug: "Accounting",
     points: ["Day-to-Day Bookkeeping", "Financial Statement Preparation", "Bank Reconciliation Services", "Accounts Payable & Receivable", "Tally / QuickBooks Management", "Structured Payroll Systems", "MIS Reports & Executive Dashboards", "Year-End Books Closing"]
   },
   {
     title: "Income Tax Advisory",
     desc: "Smart direct tax strategic blueprints and execution pathways for high-net-worth individuals, emerging startups, and corporate boardrooms.",
-    cta: "Analyze Tax Strategy",
+    cta: "Call for Tax Strategy",
     slug: "Income Tax",
     points: ["ITR Filing (All Categories)", "Tax Structuring & Strategy", "Tax Assessment & Notice Replies", "TDS Deduction & Return Filings", "Capital Gain Portfolio Management", "Advance Tax Computation", "Appeals & Tribunal Filings", "Business & Profession Taxation"]
   },
   {
     title: "International Taxation",
     desc: "Expert frameworks ensuring global cross-border transactions remain risk-free, tax-optimized, and fully compliant with international treaties.",
-    cta: "Consult Cross-Border Frameworks",
+    cta: "Call for Global Tax Advice",
     slug: "International Taxation",
     points: ["DTAA Double Tax Treaties Planning", "FEMA & RBI Compliance", "Transfer Pricing Architecture", "NRI Comprehensive Tax Frameworks", "Foreign Remittances (15CA/CB)", "Global Tax Structuring", "Cross-Border Investment Advisory", "Import-Export Taxation Clearances"]
   },
   {
     title: "Corporate Services",
     desc: "End-to-end support for structuring legal entities, registering companies, protecting partners, and handling annual regulatory frameworks effortlessly.",
-    cta: "Initiate Entity Incorporation",
+    cta: "Call for Incorporation Help",
     slug: "Corporate Services",
     points: ["Company & LLP Inceptions", "ROC Annual Filing Management", "Director DIN & DSC Clearances", "Startup Recognition & Tax Holidays", "Partnership Registrations", "Corporate Joint Ventures Restructuring", "Shareholder Agreements Frameworks", "MSME/Udyam Registrations"]
   },
   {
     title: "Internal Controls & Audit",
     desc: "Comprehensive internal risk scanning and statutory audits engineered to safeguard your enterprise, improve processes, and fulfill legal guidelines.",
-    cta: "Schedule Enterprise Audit",
+    cta: "Call to Schedule Audit",
     slug: "Audit Services",
     points: ["Statutory Audit (Companies Act)", "Internal Framework Evaluations", "Risk Mapping & Minimization", "SOP Standard Designs", "System Compliance Protocols", "Process & Performance Diagnostics", "Concurrent Banking Audits", "Financial Due Diligence Evaluations"]
   },
   {
     title: "Management Consulting",
     desc: "Proactive management consultations structured around target KPIs, financial engineering, and performance scaling to guarantee market expansion.",
-    cta: "Request Scale Evaluation",
+    cta: "Call for Scale Consultation",
     slug: "Management Consulting",
     points: ["Feasibility Layouts & Business Planning", "Cost Architecture Streamlining", "Financial Forecasting Models", "KPI Integration Metrics", "Budget Variance Analytics", "Startup Ecosystem Incubation", "Scalable Expansion Roadmaps", "Workflow Optimization Projects"]
   },
   {
     title: "Business Process Outsourcing",
     desc: "Transition your finance operations seamlessly to our team. Save up to 50% on operational costs while retaining world-class accuracy.",
-    cta: "Deploy Outsourced Unit",
+    cta: "Call to Outsource Now",
     slug: "BPO Services",
     points: ["Virtual CFO & Controller Solutions", "End-To-End Payroll Operations", "Monthly Institutional MIS Kits", "GST & TDS Outsourced Ecosystems", "Treasury & Finance Workflows", "Vendor Invoicing Systems", "Back Office Bookkeeping Units", "Operational Analytics Support"]
   }
@@ -1568,42 +1595,33 @@ function switchService(index) {
   const data = servicesData[index];
   const pane = document.getElementById('servicesContentPane');
 
-  gsap.to(pane, {
-    opacity: 0,
-    y: 15,
-    duration: 0.25,
-    onComplete: () => {
-      document.getElementById('svcTitle').textContent = data.title;
-      document.getElementById('svcDesc').textContent = data.desc;
-      document.getElementById('svcCtaText').textContent = data.cta;
-      
-      const pointsContainer = document.getElementById('svcPoints');
-      pointsContainer.innerHTML = '';
-      data.points.forEach(pt => {
-        const div = document.createElement('div');
-        div.className = 'svc-list-item';
-        div.textContent = pt;
-        pointsContainer.appendChild(div);
-      });
-
-      gsap.to(pane, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
-    }
-  });
+  if (pane) {
+    gsap.to(pane, {
+      opacity: 0,
+      y: 15,
+      duration: 0.25,
+      onComplete: () => {
+        document.getElementById('svcTitle').textContent = data.title;
+        document.getElementById('svcDesc').textContent = data.desc;
+        document.getElementById('svcCtaText').textContent = data.cta;
+        
+        const pointsContainer = document.getElementById('svcPoints');
+        pointsContainer.innerHTML = '';
+        data.points.forEach(pt => {
+          const div = document.createElement('div');
+          div.className = 'svc-list-item';
+          div.textContent = pt;
+          pointsContainer.appendChild(div);
+        });
+        gsap.to(pane, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
+      }
+    });
+  }
 }
 
-// ===== SMART FORM SYNC INTEGRATION =====
-document.getElementById('svcCtaLink').addEventListener('click', function(e) {
-  const activeBtn = document.querySelector('.svc-tab-btn.active');
-  if (activeBtn) {
-    const btnText = activeBtn.textContent.replace('→', '').trim();
-    const dropdown = document.getElementById('contactServiceSelect');
-    
-    // Scan structure and fallback match smoothly
-    let matchedOption = Array.from(dropdown.options).find(opt => opt.value.toLowerCase().includes(btnText.toLowerCase()) || btnText.toLowerCase().includes(opt.value.toLowerCase()));
-    if(matchedOption) {
-      dropdown.value = matchedOption.value;
-    }
-  }
+// Ensure first service initializes properly on load
+window.addEventListener('DOMContentLoaded', () => {
+  switchService(0);
 });
 
 // ===== CURSOR =====
@@ -1782,12 +1800,12 @@ window.addEventListener('resize', () => {
 setupSliderControls();
 
 let autoSlide=setInterval(()=>{
-  goToSlide(currentSlide>=maxSlide?0:currentSlide+1);
+  goToSlide(currentSlidemaxSlide?0:currentSlide+1);
 },4500);
 
 track.addEventListener('mouseenter',()=>clearInterval(autoSlide));
 track.addEventListener('mouseleave',()=>{
-  autoSlide=setInterval(()=>goToSlide(currentSlide>=maxSlide?0:currentSlide+1),4500);
+  autoSlide=setInterval(()=>goToSlide(currentSlidemaxSlide?0:currentSlide+1),4500);
 });
 
 // ===== NAVBAR ACTIVE LINKS =====
@@ -1795,15 +1813,15 @@ const sections=document.querySelectorAll('section[id]');
 const navLinks=document.querySelectorAll('.nav-links a');
 
 ScrollTrigger.create({
-  trigger:'body',
-  start:'top top',
-  end:'bottom bottom',
-  onUpdate:(self)=>{
-    sections.forEach(section=>{
-      const rect=section.getBoundingClientRect();
-      if(rect.top<=120&&rect.bottom>=120){
-        navLinks.forEach(link=>{
-          link.style.color=link.getAttribute('href')==='#'+section.id?'var(--blue)':'';
+  trigger: 'body',
+  start: 'top top',
+  end: 'bottom bottom',
+  onUpdate: (self) => {
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 120 && rect.bottom >= 120) {
+        navLinks.forEach(link => {
+          link.style.color = link.getAttribute('href') === '#' + section.id ? 'var(--blue)' : '';
         });
       }
     });
@@ -1897,14 +1915,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
   });
 });
 </script>
-<a href="https://wa.me/918690611515?text=Hello%20CA%20Jay%20Mehta!%20I%20want%20to%20book%20a%20free%20consultation." class="wa-float" target="_blank">
-  <div class="wa-float-btn">
-    <span class="wa-icon">
-      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor; display: block;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66 1.01 3.298 1.558 5.347 1.559 5.423 0 9.834-4.412 9.837-9.838.001-2.628-1.021-5.1-2.88-6.961C17.034 2.052 14.561 1.03 12.012 1.03c-5.424 0-9.835 4.412-9.838 9.839-.001 2.112.564 4.15 1.636 5.92l-.993 3.626 3.832-.981zM16.711 13.9c-.27-.135-1.602-.79-1.849-.882-.247-.091-.427-.136-.607.135-.18.27-.697.882-.855 1.062-.158.18-.315.203-.585.068-.27-.135-1.14-.42-2.172-1.341-.803-.715-1.345-1.6-1.503-1.871-.158-.27-.017-.416.118-.551.121-.122.27-.315.405-.472.135-.158.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.607-1.463-.831-2.003-.219-.527-.44-.455-.607-.463-.158-.007-.338-.009-.517-.009-.18 0-.473.067-.72.337-.247.27-.945.923-.945 2.25s.967 2.61 1.102 2.79c.135.18 1.902 2.904 4.609 4.074.645.278 1.148.445 1.54.57.649.206 1.24.177 1.707.107.52-.078 1.602-.656 1.828-1.29.225-.633.225-1.18.157-1.291-.067-.113-.247-.203-.517-.339z"/></svg>
-    </span>
-    <span class="wa-text">WhatsApp Us</span>
-  </div>
-</a>
 
 </body>
 </html>
