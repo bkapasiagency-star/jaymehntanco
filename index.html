@@ -2668,18 +2668,19 @@ if (node.marks) {
   return '';
 }
 
+// Global posts store — avoids JSON-in-onclick breaking on rich text content
+window._cfPosts = [];
+
 // Build featured card HTML (first post)
-function buildFeaturedCard(post, imageUrl) {
+function buildFeaturedCard(post, imageUrl, idx) {
   const f = post.fields;
-  const cat = f.category ||
-'General';
+  const cat = f.category || 'General';
   const cs = getCategoryStyle(cat);
   const imgHtml = imageUrl
-    ?
-`<img src="${imageUrl}" alt="${f.title || ''}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">`
+    ? `<img src="${imageUrl}" alt="${f.title || ''}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">`
     : `<div style="height:100%;background:${cs.grad};display:flex;align-items:center;justify-content:center;font-size:72px;">${cs.emoji}</div>`;
-return `
-    <div class="blog-card blog-card-featured reveal-left" onclick="openBlogModal(${JSON.stringify(post).replace(/"/g,'"')})" style="cursor:pointer;">
+  return `
+    <div class="blog-card blog-card-featured reveal-left" onclick="openBlogModal(window._cfPosts[${idx}])" style="cursor:pointer;">
       <div class="blog-card-img" style="height:320px;overflow:hidden;">${imgHtml}</div>
       <div class="blog-card-body">
         <div class="blog-tag">📌 ${cat}</div>
@@ -2688,8 +2689,7 @@ return `
         <div class="blog-meta">
           <div class="blog-author">
             <div class="blog-author-avatar">JM</div>
-           
- <div>
+            <div>
               <div class="blog-author-name">CA Jay Mehta</div>
               <div class="blog-date">${formatDate(f.publishedDate)}</div>
             </div>
@@ -2698,21 +2698,19 @@ return `
         </div>
         <span class="blog-read-link">Read Full Article →</span>
       </div>
-   
- </div>`;
+    </div>`;
 }
 
 // Build side card HTML (posts 2 & 3)
-function buildSideCard(post, imageUrl) {
+function buildSideCard(post, imageUrl, idx) {
   const f = post.fields;
-const cat = f.category || 'General';
+  const cat = f.category || 'General';
   const cs = getCategoryStyle(cat);
   const imgHtml = imageUrl
-    ?
-`<img src="${imageUrl}" alt="${f.title || ''}" style="width:100%;height:180px;object-fit:cover;display:block;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">`
+    ? `<img src="${imageUrl}" alt="${f.title || ''}" style="width:100%;height:180px;object-fit:cover;display:block;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">`
     : `<div style="height:180px;background:${cs.grad};display:flex;align-items:center;justify-content:center;font-size:48px;">${cs.emoji}</div>`;
-return `
-    <div class="blog-card blog-card-side reveal-right" onclick="openBlogModal(${JSON.stringify(post).replace(/"/g,'"')})" style="cursor:pointer;">
+  return `
+    <div class="blog-card blog-card-side reveal-right" onclick="openBlogModal(window._cfPosts[${idx}])" style="cursor:pointer;">
       <div class="blog-card-img" style="overflow:hidden;">${imgHtml}</div>
       <div class="blog-card-body">
         <div class="blog-tag">📌 ${cat}</div>
@@ -2721,8 +2719,7 @@ return `
           <div class="blog-author">
             <div class="blog-author-avatar">JM</div>
             <div>
-          
-    <div class="blog-author-name">CA Jay Mehta</div>
+              <div class="blog-author-name">CA Jay Mehta</div>
               <div class="blog-date">${formatDate(f.publishedDate)}</div>
             </div>
           </div>
@@ -2734,17 +2731,15 @@ return `
 }
 
 // Build small card HTML (posts 4–7)
-function buildSmallCard(post, imageUrl) {
-  const 
-f = post.fields;
+function buildSmallCard(post, imageUrl, idx) {
+  const f = post.fields;
   const cat = f.category || 'General';
   const cs = getCategoryStyle(cat);
-const imgHtml = imageUrl
-    ? `<img src="${imageUrl}" alt="${f.title || ''}" style="width:100%;height:120px;object-fit:cover;display:block;transition:transform 0.5s ease;"
-onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">`
+  const imgHtml = imageUrl
+    ? `<img src="${imageUrl}" alt="${f.title || ''}" style="width:100%;height:120px;object-fit:cover;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">`
     : `<div style="height:120px;background:${cs.grad};display:flex;align-items:center;justify-content:center;font-size:36px;">${cs.emoji}</div>`;
   return `
-    <div class="blog-card-small" onclick="openBlogModal(${JSON.stringify(post).replace(/"/g,'"')})" style="cursor:pointer;">
+    <div class="blog-card-small" onclick="openBlogModal(window._cfPosts[${idx}])" style="cursor:pointer;">
       <div class="blog-card-small-img" style="overflow:hidden;">${imgHtml}</div>
       <div class="blog-card-small-body">
         <span class="blog-date">${formatDate(f.publishedDate)}</span>
@@ -2757,10 +2752,7 @@ onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transfor
 
 // Open modal with full post
 function openBlogModal(post) {
-  if (typeof post === 'string') {
-   
- try { post = JSON.parse(post); } catch(e) { return; }
-  }
+  if (!post) return;
   const f = post.fields;
   const cat = f.category || 'Article';
   const cs = getCategoryStyle(cat);
@@ -2832,41 +2824,42 @@ if (data.includes && data.includes.Asset) {
       });
 }
     window._cfAssets = assetMap; // store globally for modal use
+    window._cfPosts = posts;     // store globally for onclick index lookup
 
     document.getElementById('blogLoading').style.display = 'none';
-if (posts.length === 0) {
+    if (posts.length === 0) {
       document.getElementById('blogEmpty').style.display = 'block';
       return;
-}
+    }
 
     // Resolve coverImage URL for a post
     function getImageUrl(post) {
       const f = post.fields;
-if (f.coverImage && f.coverImage.sys && assetMap[f.coverImage.sys.id]) {
+      if (f.coverImage && f.coverImage.sys && assetMap[f.coverImage.sys.id]) {
         return assetMap[f.coverImage.sys.id];
-}
+      }
       return null;
     }
 
     // Featured (post 0)
     const mainGrid = document.getElementById('blogMainGrid');
-mainGrid.innerHTML = buildFeaturedCard(posts[0], getImageUrl(posts[0]));
+    mainGrid.innerHTML = buildFeaturedCard(posts[0], getImageUrl(posts[0]), 0);
 
     // Side posts (posts 1 & 2)
     if (posts.length > 1) {
       const sideWrap = document.createElement('div');
-sideWrap.style.cssText = 'display:flex;flex-direction:column;gap:24px;';
-      sideWrap.innerHTML = buildSideCard(posts[1], getImageUrl(posts[1]));
-      if (posts.length > 2) sideWrap.innerHTML += buildSideCard(posts[2], getImageUrl(posts[2]));
+      sideWrap.style.cssText = 'display:flex;flex-direction:column;gap:24px;';
+      sideWrap.innerHTML = buildSideCard(posts[1], getImageUrl(posts[1]), 1);
+      if (posts.length > 2) sideWrap.innerHTML += buildSideCard(posts[2], getImageUrl(posts[2]), 2);
       mainGrid.appendChild(sideWrap);
-}
+    }
 
     // Small cards (posts 3–6)
     const smallPosts = posts.slice(3, 7);
-const smallGrid = document.getElementById('blogSmallGrid');
+    const smallGrid = document.getElementById('blogSmallGrid');
     if (smallPosts.length > 0) {
-      smallGrid.innerHTML = smallPosts.map(p => buildSmallCard(p, getImageUrl(p))).join('');
-} else {
+      smallGrid.innerHTML = smallPosts.map((p, i) => buildSmallCard(p, getImageUrl(p), i + 3)).join('');
+    } else {
       smallGrid.style.display = 'none';
     }
 
