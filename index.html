@@ -1,0 +1,2920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jay Mehta & Co. - Premier Chartered Accountants in Surat, Gujarat. Expert services in GST, Income Tax, Audit, Accounting, Corporate Law, International Taxation & more. FCA | CMA | DISA | B.Com">
+<meta name="keywords" content="Chartered Accountant Surat, CA Surat, GST Advisory Surat, Income Tax Filing Surat, Audit Services Surat, Jay Mehta CA, Tax Consultant Surat Gujarat">
+<meta name="author" content="Jay Mehta & Co.">
+<meta property="og:title" content="Jay Mehta & Co. | Chartered Accountants Surat">
+<meta property="og:description" content="Premier CA firm in Surat offering GST, Tax, Audit, Corporate & International services.">
+<meta property="og:type" content="website">
+<title>Jay Mehta & Co. | Premier Chartered Accountants | Surat, Gujarat</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+<style>
+:root {
+  --navy: #0B2D6B;
+  --blue: #0B57D0;
+  --blue-mid: #1a68e0;
+  --orange: #E8630A;
+  --green: #13C653;
+  --green-dark: #0fa843;
+  --gold: #C9960C;
+  --light-bg: #F5F7FA;
+  --lighter-bg: #FAFBFD;
+  --white: #FFFFFF;
+  --text-dark: #0D1B3E;
+  --text-mid: #3B4A6B;
+  --text-light: #7A8AA8;
+  --border: rgba(11,87,208,0.10);
+  --shadow-sm: 0 4px 24px rgba(11,45,107,0.07);
+  --shadow-md: 0 12px 48px rgba(11,45,107,0.10);
+  --shadow-lg: 0 32px 80px rgba(11,45,107,0.13);
+  --radius-sm: 16px;
+  --radius-md: 28px;
+  --radius-lg: 40px;
+  --radius-xl: 56px;
+  --glass: rgba(255,255,255,0.78);
+  --glass-border: rgba(255,255,255,0.65);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--lighter-bg);
+  color:var(--text-dark);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+img{display:block;max-width:100%;}
+a{text-decoration:none;}
+
+.container{width:min(92%,1380px);margin:auto;}
+
+/* ===== CURSOR ===== */
+.cursor{
+  position:fixed;width:12px;height:12px;
+  background:var(--blue);border-radius:50%;
+  pointer-events:none;z-index:9999;mix-blend-mode:multiply;
+  transition:transform 0.15s ease;
+  display:none;
+}
+.cursor-follower{
+  position:fixed;width:36px;height:36px;
+  border:2px solid var(--blue);border-radius:50%;
+  pointer-events:none;z-index:9998;
+  transition:all 0.35s cubic-bezier(0.175,0.885,0.32,1.275);
+  opacity:0.4;
+  display:none;
+}
+@media(min-width: 1025px) {
+  .cursor, .cursor-follower { display: block; }
+}
+
+/* ===== NOISE OVERLAY ===== */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:0.4;
+}
+
+/* ===== NAVBAR ===== */
+#navbar{
+  position:fixed;top:20px;left:50%;transform:translateX(-50%);
+  width:min(96%,1360px);
+  background:var(--glass);
+  backdrop-filter:blur(24px) saturate(180%);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius-md);
+  box-shadow:var(--shadow-md);
+  padding:14px 28px;
+  display:flex;justify-content:space-between;align-items:center;
+  z-index:1000;
+  transition:all 0.4s ease;
+}
+#navbar.scrolled{
+  top:10px;
+  box-shadow:0 20px 60px rgba(11,45,107,0.15);
+}
+
+.nav-logo{display:flex;align-items:center;gap:14px;}
+.nav-logo img.ca-badge{height:44px;width:auto;object-fit:contain;}
+.nav-logo .firm-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:700;
+  color:var(--navy);
+  line-height:1.2;
+}
+.nav-logo .firm-sub{font-size:11px;color:var(--blue);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;}
+
+.nav-links{display:flex;gap:32px;align-items:center;}
+.nav-links a{
+  font-size:14px;font-weight:600;
+  color:var(--text-mid);
+  position:relative;padding:4px 0;
+  transition:color 0.25s;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:0;height:2px;
+  background:linear-gradient(90deg,var(--blue),var(--green));
+  transition:width 0.35s cubic-bezier(0.4,0,0.2,1);
+  border-radius:2px;
+}
+.nav-links a:hover{color:var(--blue);}
+.nav-links a:hover::after{width:100%;}
+
+.nav-cta{
+  display:flex;gap:10px;align-items:center;
+}
+.btn-nav-primary{
+  padding:12px 24px;border-radius:var(--radius-sm);
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  color:white;font-size:14px;font-weight:700;
+  transition:all 0.3s ease;
+  box-shadow:0 4px 20px rgba(11,87,208,0.3);
+}
+.btn-nav-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(11,87,208,0.4);}
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:0.3s;}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu{
+  display:none;position:fixed;inset:0;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(20px);
+  z-index:999;
+  flex-direction:column;align-items:center;justify-content:center;gap:32px;
+  opacity:0;pointer-events:none;transition:0.4s;
+}
+.mobile-menu.open{opacity:1;pointer-events:all;}
+.mobile-menu a{font-size:28px;font-weight:700;color:var(--navy);font-family:'Cormorant Garamond',serif;}
+.mobile-close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--navy);}
+
+/* ===== HERO ===== */
+#hero{
+  min-height:100vh;
+  padding-top:140px;padding-bottom:80px;
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;
+}
+
+.hero-bg-orb{
+  position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;
+}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,rgba(11,87,208,0.10),transparent);top:-200px;right:-150px;}
+.orb2{width:500px;height:500px;background:radial-gradient(circle,rgba(19,198,83,0.08),transparent);bottom:-100px;left:-100px;}
+.orb3{width:300px;height:300px;background:radial-gradient(circle,rgba(232,99,10,0.07),transparent);top:40%;left:40%;}
+
+.hero-grid{
+  display:grid;grid-template-columns:1.1fr 0.9fr;
+  gap:64px;align-items:center;
+  position:relative;z-index:2;
+}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 20px;border-radius:100px;
+  background:white;border:1px solid var(--border);
+  box-shadow:var(--shadow-sm);
+  font-size:13px;font-weight:700;
+  color:var(--navy);margin-bottom:28px;
+}
+.hero-badge span{
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.badge-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.5);}}
+
+.hero-eyebrow{
+  font-size:12px;font-weight:700;letter-spacing:3px;
+  color:var(--orange);text-transform:uppercase;margin-bottom:16px;
+}
+
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,5.5vw,86px);
+  line-height:1.03;font-weight:700;
+  letter-spacing:-1px;
+  color:var(--navy);margin-bottom:28px;
+}
+.hero h1 em{font-style:italic;color:var(--blue);}
+.hero h1 .accent-line{
+  background:linear-gradient(135deg,var(--orange),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+
+.hero-desc{
+  font-size:17px;line-height:1.85;color:var(--text-mid);
+  margin-bottom:40px;max-width:540px;
+}
+
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
+
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:18px 36px;border-radius:var(--radius-sm);
+  background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);
+  color:white;font-weight:700;font-size:15px;
+  box-shadow:0 8px 32px rgba(11,87,208,0.35);
+  transition:all 0.35s cubic-bezier(0.4,0,0.2,1);
+  position:relative;overflow:hidden;
+}
+.btn-primary::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--blue),var(--navy));
+  opacity:0;transition:opacity 0.35s;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(11,87,208,0.4);}
+.btn-primary:hover::before{opacity:1;}
+.btn-primary span{position:relative;}
+
+.btn-outline{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:18px 32px;border-radius:var(--radius-sm);
+  background:white;color:var(--navy);font-weight:700;font-size:15px;
+  border:2px solid var(--border);
+  transition:all 0.3s ease;
+}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
+
+.hero-trust{display:flex;gap:32px;align-items:center;flex-wrap:wrap;}
+.trust-item{
+  display:flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:600;color:var(--text-mid);
+}
+.trust-icon{font-size:20px;}
+
+/* HERO VISUAL */
+.hero-visual{position:relative;}
+.hero-img-wrap{
+  border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-lg);
+  position:relative;
+}
+.hero-img-wrap img{width:100%;height:680px;object-fit:cover;}
+.hero-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 60%,rgba(11,45,107,0.5));
+}
+
+.hero-float-card{
+  position:absolute;
+  background:var(--glass);
+  backdrop-filter:blur(20px);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius-md);
+  box-shadow:var(--shadow-md);
+  padding:20px 24px;
+}
+.float-card-1{bottom:-24px;left:-32px;min-width:220px;}
+.float-card-2{top:32px;right:-32px;min-width:190px;}
+.float-card-3{bottom:120px;right:-24px;min-width:160px;}
+
+.float-card-1 .fc-num{font-size:36px;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.float-card-1 .fc-label{font-size:13px;color:var(--text-mid);font-weight:600;margin-top:2px;}
+.float-card-2 .fc-icon{font-size:28px;margin-bottom:8px;}
+.float-card-2 .fc-text{font-size:13px;font-weight:700;color:var(--navy);}
+.float-card-3 .stars{color:#F59E0B;font-size:18px;margin-bottom:4px;}
+.float-card-3 .fc-text{font-size:13px;font-weight:700;color:var(--navy);}
+.float-card-3 .fc-sub{font-size:11px;color:var(--text-light);}
+
+/* ===== STATS RIBBON ===== */
+.stats-ribbon{
+  background: linear-gradient(135deg, #061b40 0%, #0B2D6B 40%, #0b4cb5 70%, #108548 100%);
+  padding: 70px 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: inset 0 20px 40px rgba(0,0,0,0.2), var(--shadow-lg);
+}
+.stats-ribbon::before{
+  content:'';position:absolute;inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.7;
+}
+.stats-grid{
+  display:grid; grid-template-columns:repeat(5,1fr);
+  gap: 20px; position:relative;
+}
+.stat-item{
+  perspective: 1000px;
+}
+.stat-card-inner {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 32px 20px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.stat-card-inner:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(11, 87, 208, 0.25);
+}
+.stat-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size: 56px; font-weight: 700;
+  color: white; line-height: 1; margin-bottom: 12px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  letter-spacing: -0.5px;
+}
+.stat-label{
+  font-size: 12px; font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+/* ===== SECTION BASE ===== */
+section{padding:120px 0;}
+.section-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:var(--orange);
+  margin-bottom:16px;
+}
+.section-label::before{content:'';width:28px;height:2px;background:var(--orange);border-radius:2px;}
+
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(40px,4vw,68px);font-weight:700;
+  line-height:1.07;color:var(--navy);
+  margin-bottom:20px;
+}
+.section-title em{font-style:italic;color:var(--blue);}
+
+.section-desc{
+  font-size:17px;line-height:1.9;color:var(--text-mid);
+  max-width:640px;
+}
+
+/* ===== ABOUT ===== */
+#about{background:var(--lighter-bg);}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+
+.about-img-stack{position:relative;height:700px;}
+.about-img-main{
+  width:100%;height:620px;
+  object-fit:cover;border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);
+}
+.about-experience-badge{
+  position:absolute;top:40px;left:-32px;
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  color:white;border-radius:var(--radius-md);
+  padding:24px 28px;box-shadow:var(--shadow-md);
+  text-align:center;
+}
+.exp-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;line-height:1;}
+.exp-label{font-size:12px;font-weight:700;letter-spacing:1px;margin-top:4px;opacity:0.85;}
+
+.about-right{}
+.about-credentials{
+  display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px;
+}
+.cred-pill{
+  padding:8px 18px;border-radius:100px;
+  background:white;border:1px solid var(--border);
+  font-size:13px;font-weight:700;color:var(--blue);
+  box-shadow:var(--shadow-sm);
+}
+
+.about-text{font-size:16px;line-height:2;color:var(--text-mid);margin-bottom:32px;}
+
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px;}
+.about-feat{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:20px;border-radius:var(--radius-sm);
+  background:white;border:1px solid var(--border);
+  box-shadow:var(--shadow-sm);
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+.about-feat:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.feat-icon{
+  width:44px;height:44px;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(11,87,208,0.1),rgba(19,198,83,0.1));
+  border-radius:12px;display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+}
+.feat-text{font-size:14px;font-weight:600;color:var(--text-dark);line-height:1.5;}
+.feat-sub{font-size:12px;color:var(--text-light);margin-top:2px;}
+
+
+/* ===== SERVICES SECTION ===== */
+#services {
+  background: linear-gradient(180deg, var(--lighter-bg) 0%, #EDF2FB 100%);
+}
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.services-dashboard {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  min-height: 650px;
+}
+.services-tabs-sidebar {
+  background: #FAFBFD;
+  border-right: 1px solid var(--border);
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.svc-tab-btn {
+  width: 100%;
+  padding: 16px 24px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.svc-tab-btn.active {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+.svc-tab-btn:hover:not(.active) {
+  background: rgba(11, 87, 208, 0.05);
+  color: var(--blue);
+  padding-left: 28px;
+}
+.services-content-pane {
+  padding: 48px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.svc-display-case {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.svc-info-block h3 {
+  font-size: 42px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+.svc-info-block p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-mid);
+  margin-bottom: 28px;
+}
+.svc-grid-points {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.svc-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+.svc-list-item::before {
+  content: '•';
+  color: var(--blue);
+  font-size: 20px;
+  line-height: 1;
+}
+.sc-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  color: var(--white);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(11,87,208,0.2);
+}
+.sc-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(11,87,208,0.3);
+}
+.svc-visual-block {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  height: 480px;
+}
+.svc-visual-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== TESTIMONIALS ===== */
+#testimonials{background:var(--lighter-bg);}
+.testimonials-inner{position:relative;}
+
+.testimonials-track-wrap{overflow:hidden;border-radius:var(--radius-lg);}
+.testimonials-track{
+  display:flex;gap:24px;
+  transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform;
+}
+.testi-card{
+  flex:0 0 calc(33.333% - 16px);
+  background:white;border-radius:var(--radius-md);
+  border:1px solid var(--border);
+  padding:40px 36px;
+  box-shadow:var(--shadow-sm);
+  position:relative;overflow:hidden;
+  transition:all 0.4s;
+}
+.testi-card::before{
+  content:'❝';
+  position:absolute;top:16px;right:24px;
+  font-size:80px;color:var(--blue);opacity:0.06;
+  font-family:serif;line-height:1;
+}
+.testi-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.testi-stars{color:#F59E0B;font-size:20px;margin-bottom:16px;letter-spacing:2px;}
+.testi-text{font-size:15px;line-height:1.9;color:var(--text-mid);margin-bottom:24px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:12px;}
+.testi-avatar{
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-weight:800;font-size:18px;flex-shrink:0;
+}
+.testi-name{font-size:15px;font-weight:800;color:var(--navy);}
+.testi-role{font-size:12px;color:var(--text-light);}
+
+.testi-controls{
+  display:flex;justify-content:center;gap:12px;margin-top:40px;
+}
+.testi-dot{
+  width:32px;height:6px;border-radius:3px;
+  background:var(--border);cursor:pointer;transition:all 0.3s;
+}
+.testi-dot.active{background:var(--blue);width:48px;}
+
+/* ===== OFFICE ===== */
+#office{
+  background:linear-gradient(180deg,#EDF2FB 0%,var(--lighter-bg) 100%);
+}
+.office-masonry{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:20px;
+}
+.office-img{
+  border-radius:var(--radius-md);overflow:hidden;
+  box-shadow:var(--shadow-sm);position:relative;
+}
+.office-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;}
+.office-img:hover img{transform:scale(1.04);}
+.office-img-1{grid-row:span 2;height:640px;}
+.office-img-2{height:300px;}
+.office-img-3{height:324px;}
+.office-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(11,45,107,0.5),transparent);
+  opacity:0;transition:opacity 0.4s;
+  display:flex;align-items:flex-end;padding:24px;
+}
+.office-img:hover .office-overlay{opacity:1;}
+.office-overlay span{color:white;font-weight:700;font-size:15px;}
+
+/* ===== CONTACT ===== */
+#contact{background:var(--lighter-bg);}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1.2fr;
+  gap:32px;
+}
+
+.contact-info{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);
+  border-radius:var(--radius-lg);padding:56px 48px;
+  position:relative;overflow:hidden;
+}
+.contact-info::before{content:'';position:absolute;bottom:-80px;right:-80px;width:280px;height:280px;background:rgba(255,255,255,0.05);border-radius:50%;}
+.contact-info::after{content:'';position:absolute;top:-60px;left:-60px;width:200px;height:200px;background:rgba(255,255,255,0.04);border-radius:50%;}
+
+.ci-title{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:white;line-height:1.1;margin-bottom:16px;}
+.ci-desc{font-size:15px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:40px;}
+
+.ci-items{display:flex;flex-direction:column;gap:20px;position:relative;z-index:1;}
+.ci-item{
+  display:flex;gap:16px;align-items:flex-start;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:var(--radius-sm);padding:20px 24px;
+  transition:background 0.3s;
+}
+.ci-item:hover{background:rgba(255,255,255,0.16);}
+.ci-icon{font-size:22px;margin-top:2px;}
+.ci-detail{font-size:14px;color:rgba(255,255,255,0.9);font-weight:500;}
+.ci-detail strong{display:block;font-size:12px;color:rgba(255,255,255,0.55);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+
+.wa-cta-box{
+  display:flex;align-items:center;gap:16px;
+  background:#25D366;border-radius:var(--radius-sm);
+  padding:20px 24px;margin-top:28px;cursor:pointer;
+  transition:all 0.3s;position:relative;z-index:1;
+  text-decoration:none;
+}
+.wa-cta-box:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,0.4);}
+.wa-cta-box .wa-icon{font-size:28px;}
+.wa-cta-text{color:white;}
+.wa-cta-text strong{display:block;font-size:16px;font-weight:800;}
+.wa-cta-text span{font-size:13px;opacity:0.85;}
+
+.contact-form-wrap{
+  background:white;border-radius:var(--radius-lg);
+  padding:56px 48px;border:1px solid var(--border);
+  box-shadow:var(--shadow-md);
+}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.form-sub{font-size:14px;color:var(--text-mid);margin-bottom:32px;}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:12px;font-weight:700;color:var(--navy);letter-spacing:0.5px;margin-bottom:8px;}
+.form-group input,
+.form-group textarea,
+.form-group select{
+  width:100%;padding:14px 18px;
+  border:1.5px solid var(--border);
+  border-radius:var(--radius-sm);
+  font-family:'DM Sans',sans-serif;
+  font-size:14px;color:var(--text-dark);
+  background:var(--lighter-bg);
+  transition:all 0.25s;outline:none;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+  border-color:var(--blue);
+  background:white;
+  box-shadow:0 0 0 4px rgba(11,87,208,0.08);
+}
+.form-group textarea{resize:none;height:120px;}
+
+.btn-submit{
+  width:100%;padding:18px;border:none;cursor:pointer;
+  border-radius:var(--radius-sm);
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  color:white;font-family:'DM Sans',sans-serif;
+  font-size:16px;font-weight:700;
+  transition:all 0.3s;box-shadow:0 8px 32px rgba(11,87,208,0.3);
+}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 16px 48px rgba(11,87,208,0.4);}
+
+/* ===== CTA BANNER ===== */
+.cta-banner{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 50%,var(--green-dark) 100%);
+  border-radius:var(--radius-xl);
+  padding:80px 64px;
+  text-align:center;
+  position:relative;overflow:hidden;
+  margin:0 0 120px;
+}
+.cta-banner::before{content:'';position:absolute;top:-100px;left:-100px;width:400px;height:400px;background:rgba(255,255,255,0.05);border-radius:50%;}
+.cta-banner::after{content:'';position:absolute;bottom:-80px;right:-80px;width:320px;height:320px;background:rgba(255,255,255,0.04);border-radius:50%;}
+.cta-banner h2{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:white;margin-bottom:16px;position:relative;z-index:1;}
+.cta-banner p{font-size:17px;color:rgba(255,255,255,0.8);margin-bottom:40px;position:relative;z-index:1;}
+.cta-banner-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+.btn-cta-white{
+  padding:18px 40px;border-radius:var(--radius-sm);
+  background:white;color:var(--navy);
+  font-weight:800;font-size:16px;
+  transition:all 0.3s;box-shadow:0 8px 32px rgba(0,0,0,0.2);
+}
+.btn-cta-white:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,0.25);}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--navy);
+  padding:80px 0 32px;
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;
+  gap:48px;margin-bottom:56px;
+}
+.footer-brand{}
+.footer-logos{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.footer-logo-combo-mask {
+  display:flex;
+  align-items:center;
+  background:#ffffff;
+  padding:8px 16px;
+  border-radius:12px;
+  box-shadow:var(--shadow-sm);
+}
+.footer-logo-combo-mask img.ca-badge-footer{height:44px;width:auto;object-fit:contain;}
+.footer-brand p{font-size:14px;line-height:1.85;color:rgba(255,255,255,0.6);max-width:300px;margin-bottom:28px;}
+
+.footer-social{display:flex;gap:12px;}
+.social-btn{
+  width:40px;height:40px;border-radius:10px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;color:white;transition:all 0.3s;
+  text-decoration:none;
+}
+.social-btn:hover{background:var(--blue);border-color:var(--blue);transform:translateY(-2px);}
+
+.footer-col h4{font-size:13px;font-weight:800;color:white;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.footer-col ul li{font-size:14px;color:rgba(255,255,255,0.6);}
+.footer-col ul li a{color:rgba(255,255,255,0.6);transition:color 0.2s;}
+.footer-col ul li a:hover{color:white;}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+  padding-top:32px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:16px;
+}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,0.45);}
+
+/* ===== WHATSAPP FLOAT ===== */
+.wa-float{
+  position:fixed;bottom:32px;right:32px;z-index:990;
+}
+.wa-float-btn{
+  display:flex;align-items:center;gap:12px;
+  background:#25D366;color:white;
+  padding:16px 24px;border-radius:60px;
+  font-weight:800;font-size:15px;
+  box-shadow:0 8px 32px rgba(37,211,102,0.45);
+  transition:all 0.35s cubic-bezier(0.4,0,0.2,1);
+  text-decoration:none;
+}
+.wa-float-btn:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 16px 48px rgba(37,211,102,0.55);}
+.wa-float-btn .wa-icon{animation:wobble 2.5s infinite; display:flex;
+align-items:center;}
+@keyframes wobble{0%,100%{transform:rotate(0);}20%{transform:rotate(-10deg);}40%{transform:rotate(10deg);}60%{transform:rotate(-5deg);}80%{transform:rotate(5deg);}}
+
+/* ===== SCROLL TO TOP ===== */
+.scroll-top{
+  position:fixed;bottom:32px;left:32px;z-index:990;
+  width:48px;height:48px;border-radius:50%;
+  background:white;border:1px solid var(--border);
+  box-shadow:var(--shadow-md);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;cursor:pointer;
+  transition:all 0.3s;opacity:0;pointer-events:none;
+}
+.scroll-top.visible{opacity:1;pointer-events:all;}
+.scroll-top:hover{transform:translateY(-3px);background:var(--navy);color:white;}
+
+/* ===== MARQUEE ===== */
+.marquee-wrap{
+  overflow:hidden;padding:24px 0;
+  background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  position:relative;
+}
+.marquee-track{
+  display:flex;gap:48px;
+  animation:marquee 25s linear infinite;
+  width:max-content;
+}
+.marquee-item{
+  display:flex;align-items:center;gap:12px;
+  font-size:13px;font-weight:700;color:var(--text-mid);
+  white-space:nowrap;
+}
+.marquee-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;}
+@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%)}}
+
+/* ===== BLOG SECTION ===== */
+#blog {
+  background: linear-gradient(180deg, var(--lighter-bg) 0%, #EDF2FB 100%);
+}
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+.blog-card {
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.blog-card-img {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.blog-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.blog-card:hover .blog-card-img img {
+  transform: scale(1.04);
+}
+.blog-card-featured .blog-card-img {
+  height: 320px;
+}
+.blog-card-side .blog-card-img {
+  height: 180px;
+}
+
+/* Placeholder gradient images for blog */
+.blog-img-gst {
+  background: linear-gradient(135deg, #0B2D6B 0%, #0B57D0 60%, #13C653 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 60px;
+}
+.blog-img-itr {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 60px;
+}
+.blog-img-nri {
+  background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+  display: flex;
+  align-items: center; justify-content: center;
+  font-size: 60px;
+}
+.blog-img-startup {
+  background: linear-gradient(135deg, #E8630A 0%, #C9960C 100%);
+  display: flex; align-items: center;
+  justify-content: center;
+  font-size: 60px;
+}
+.blog-img-tds {
+  background: linear-gradient(135deg, #4b0082 0%, #0B57D0 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 60px;
+}
+.blog-img-audit {
+  background: linear-gradient(135deg, #0B2D6B 0%, #1a68e0 50%, #13C653 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 60px;
+}
+
+.blog-card-body {
+  padding: 28px 32px 32px;
+}
+.blog-card-featured .blog-card-body {
+  padding: 32px 36px 36px;
+}
+.blog-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: rgba(11, 87, 208, 0.08);
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.blog-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  transition: color 0.25s;
+}
+.blog-card:hover h3 {
+  color: var(--blue);
+}
+.blog-card-featured h3 {
+  font-size: 32px;
+}
+.blog-card-side h3 {
+  font-size: 20px;
+}
+.blog-excerpt {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--text-mid);
+  margin-bottom: 20px;
+}
+.blog-card-featured .blog-excerpt {
+  font-size: 15px;
+}
+.blog-card-side .blog-excerpt {
+  display: none;
+}
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.blog-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.blog-author-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 800; font-size: 13px;
+  flex-shrink: 0;
+}
+.blog-author-name {
+  font-size: 13px; font-weight: 700; color: var(--navy);
+}
+.blog-date {
+  font-size: 12px; color: var(--text-light); font-weight: 500;
+}
+.blog-read-time {
+  font-size: 12px; color: var(--text-light);
+  margin-left: auto;
+}
+.blog-read-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-top: 18px;
+  transition: gap 0.2s;
+}
+.blog-read-link:hover { gap: 10px; }
+
+/* Small cards row */
+.blog-small-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.blog-card-small {
+  background: white;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+.blog-card-small:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.blog-card-small-img {
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+.blog-card-small-img > div {
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+.blog-card-small:hover .blog-card-small-img > div {
+  transform: scale(1.06);
+}
+.blog-card-small-body {
+  padding: 20px;
+}
+.blog-card-small h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 10px;
+  transition: color 0.2s;
+}
+.blog-card-small:hover h4 { color: var(--blue); }
+.blog-card-small .blog-date { font-size: 11px; display: block; margin-bottom: 6px;
+}
+.blog-newsletter {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  border-radius: var(--radius-lg);
+  padding: 56px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 48px;
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+.blog-newsletter::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px; height: 240px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+.blog-newsletter-text h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+.blog-newsletter-text p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+}
+.blog-newsletter-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+.blog-newsletter-form input {
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  width: 280px;
+  outline: none;
+}
+.blog-newsletter-form button {
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: var(--green);
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.blog-newsletter-form button:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+@media(max-width:1200px) {
+  .blog-small-grid { grid-template-columns: repeat(2, 1fr);
+}
+}
+@media(max-width:1024px) {
+  .blog-grid { grid-template-columns: 1fr; }
+  .blog-card-side .blog-excerpt { display: block;
+}
+  .blog-card-side .blog-card-img { height: 220px; }
+  .blog-newsletter { padding: 40px 36px;
+}
+}
+@media(max-width:768px) {
+  .blog-small-grid { grid-template-columns: 1fr 1fr; }
+  .blog-newsletter-form input { width: 100%;
+}
+  .blog-newsletter-form { width: 100%; }
+  .blog-newsletter { padding: 36px 28px; }
+  .blog-newsletter-text h3 { font-size: 28px;
+}
+  .blog-card-featured h3 { font-size: 26px; }
+}
+@media(max-width:480px) {
+  .blog-small-grid { grid-template-columns: 1fr;
+}
+}
+
+
+/* ===== BLOG SPINNER ===== */
+.blog-spinner{
+  width:48px;height:48px;
+  border:4px solid var(--border);
+  border-top-color:var(--blue);
+  border-radius:50%;
+  animation:spin 0.9s linear infinite;
+  margin:0 auto;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* ===== MODAL RICH TEXT ===== */
+#modalBody h1,#modalBody h2,#modalBody h3,#modalBody h4{
+  font-family:'Cormorant Garamond',serif;
+  color:var(--navy);margin:28px 0 12px;line-height:1.3;
+}
+#modalBody h2{font-size:28px;}
+#modalBody h3{font-size:22px;}
+#modalBody p{margin-bottom:18px;}
+#modalBody ul,#modalBody ol{padding-left:24px;margin-bottom:18px;}
+#modalBody li{margin-bottom:8px;}
+#modalBody strong{color:var(--text-dark);font-weight:700;}
+#modalBody blockquote{
+  border-left:4px solid var(--blue);
+  padding:16px 20px;margin:24px 0;
+  background:rgba(11,87,208,0.04);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  font-style:italic;color:var(--text-mid);
+}
+#modalBody hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
+
+.glass-card{
+  background:var(--glass);
+  backdrop-filter:blur(20px) saturate(160%);
+  -webkit-backdrop-filter:blur(20px) saturate(160%);
+  border:1px solid var(--glass-border);
+  box-shadow:var(--shadow-md);
+}
+
+/* ===== ANIMATIONS ===== */
+.reveal{opacity:0;transform:translateY(40px);}
+.reveal-left{opacity:0;transform:translateX(-40px);}
+.reveal-right{opacity:0;transform:translateX(40px);}
+.reveal-scale{opacity:0;transform:scale(0.94);}
+
+/* ===== RESPONSIVE MEDIA ===== */
+@media(max-width:1200px){
+  .stats-grid{grid-template-columns:repeat(3,1fr); gap: 16px;}
+  .services-dashboard { grid-template-columns: 1fr;
+  min-height: auto; }
+  .services-tabs-sidebar { border-right: none; border-bottom: 1px solid var(--border); flex-direction: row; overflow-x: auto; padding: 20px;
+}
+  .svc-tab-btn { white-space: nowrap; width: auto; }
+  .svc-display-case { grid-template-columns: 1fr; gap: 32px;
+}
+  .svc-visual-block { height: 320px; }
+}
+@media(max-width:1024px){
+  .nav-links{display:none;}
+  .nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .mobile-menu{display:flex;}
+  .hero-grid{grid-template-columns:1fr;gap:48px;}
+  .hero-visual{display:none;}
+  .about-grid{grid-template-columns:1fr;}
+  .about-img-stack{height:auto;margin-bottom:0;}
+  .about-img-main{height:420px;}
+  .about-experience-badge{left:16px;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .testi-card{flex:0 0 100%;}
+}
+@media(max-width:768px){
+  section{padding:80px 0;}
+  .hero h1{font-size:46px;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .stats-ribbon { padding: 50px 0;
+}
+  .stat-card-inner { padding: 24px 16px; }
+  .stat-num { font-size: 44px;
+}
+  .office-masonry{grid-template-columns:1fr;}
+  .office-img-1{height:320px;grid-row:span 1;}
+  .office-img-2,.office-img-3{height:260px;}
+  .footer-grid{grid-template-columns:1fr;}
+  .contact-info,.contact-form-wrap{padding:36px 28px;}
+  .cta-banner{padding:56px 32px;}
+  .cta-banner h2{font-size:36px;}
+  .form-row{grid-template-columns:1fr;}
+  .wa-float-btn .wa-text{display:none;}
+  .wa-float-btn{padding:16px;}
+  .hero-trust{gap:20px;}
+  .about-features{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  #navbar{top:12px;padding:12px 16px;}
+  .nav-logo .firm-name{font-size:16px;}
+  .hero h1{font-size:38px;}
+  .section-title{font-size:36px;}
+  .stat-num{font-size:40px;}
+  .ci-title{font-size:32px;}
+  .form-title{font-size:28px;}
+  .stats-grid{grid-template-columns: 1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<nav id="navbar">
+  <div class="nav-logo">
+    <img src="pic1.png" alt="CA India Official Brand Badge" class="ca-badge">
+    <div>
+      <div class="firm-name">Jay Mehta & Co.</div>
+      <div class="firm-sub">Chartered Accountants</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <a href="tel:+918690611515" class="btn-nav-primary">Call Now</a>
+  </div>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-close" id="mobileClose">✕</span>
+  <a href="#hero" class="mob-link">Home</a>
+  <a href="#about" class="mob-link">About</a>
+  <a href="#services" class="mob-link">Services</a>
+  <a href="#testimonials" class="mob-link">Reviews</a>
+ 
+  <a href="#blog" class="mob-link">Blog</a>
+  <a href="#contact" class="mob-link">Contact</a>
+</div>
+
+<section id="hero">
+  <div class="hero-bg-orb orb1"></div>
+  <div class="hero-bg-orb orb2"></div>
+  <div class="hero-bg-orb orb3"></div>
+
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <div class="badge-dot"></div>
+          <span>Trusted by 500+ businesses</span> Across Surat & India
+        </div>
+
+        <div class="hero-eyebrow">CA Jay Mehta — FCA · CMA · DISA · B.Com</div>
+
+ 
+       <h1>
+          Building Your<br>
+          <em>Financial Foundation</em><br>
+          <span class="accent-line">For A Better Tomorrow.</span>
+        </h1>
+
+        <p class="hero-desc">
+          Premier Chartered Accountancy firm in Surat delivering expert GST, Taxation, Audit, Corporate Law & International Tax solutions with precision and integrity.
+</p>
+
+        <div class="hero-btns">
+          <a href="tel:+918690611515" class="btn-primary"><span>📞 Call Office Directly</span></a>
+          <a href="#services" class="btn-outline">View Services ↓</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-item"><span class="trust-icon">⚖️</span> ICAI Member</div>
+          <div class="trust-item"><span class="trust-icon">🏆</span> 500+ Clients</div>
+          <div class="trust-item"><span class="trust-icon">📍</span> Surat, Gujarat</div>
+   
+       <div class="trust-item"><span class="trust-icon">✅</span> 9+ Years Exp.</div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-img-wrap">
+          <img src="pic3.jpg" alt="CA Jay Mehta - Chartered Accountant Surat">
+          <div class="hero-img-overlay"></div>
+        </div>
+
+        <div class="hero-float-card float-card-1 glass-card">
+          
+<div class="fc-num counter" data-target="1000" data-suffix="+">1000+</div>
+          <div class="fc-label">Happy Clients Served</div>
+        </div>
+
+        <div class="hero-float-card float-card-2 glass-card">
+          <div class="fc-icon">🎯</div>
+          <div class="fc-text">ICAI Registered<br>CA Firm</div>
+        </div>
+
+        <div class="hero-float-card float-card-3 glass-card">
+          <div class="stars">★★★★★</div>
+          
+<div class="fc-text">5.0 Rating</div>
+          <div class="fc-sub">Google Reviews</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-item"><span class="marquee-dot"></span> GST Advisory</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Income Tax Filing</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Statutory Audit</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> International Taxation</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Corporate Services</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Management Consulting</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Business Process Outsourcing</div>
+   
+ <div class="marquee-item"><span class="marquee-dot"></span> Accounting & Bookkeeping</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> GST Advisory</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Income Tax Filing</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Statutory Audit</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> International Taxation</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Corporate Services</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Management Consulting</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Business Process Outsourcing</div>
+    <div class="marquee-item"><span class="marquee-dot"></span> Accounting & Bookkeeping</div>
+  </div>
+</div>
+
+<div class="stats-ribbon">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div 
+class="stat-card-inner">
+          <div class="stat-num">2017</div>
+<div class="stat-label">Established</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-card-inner">
+          <div class="stat-num Cormorant-Garamond"><span class="counter" data-target="1000" data-suffix="+">1,000+</span></div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-card-inner">
+ 
+         <div class="stat-num Cormorant-Garamond"><span class="counter" data-target="10" data-suffix="+">10+</span></div>
+          <div class="stat-label">Industries Served</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-card-inner">
+          <div class="stat-num Cormorant-Garamond"><span class="counter" data-target="98" data-suffix="%">98%</span></div>
+          <div class="stat-label">Client Retention</div>
+        </div>
+      </div>
+   
+   <div class="stat-item">
+        <div class="stat-card-inner">
+          <div class="stat-num Cormorant-Garamond"><span class="counter" data-target="100" data-suffix="%">100%</span></div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-stack reveal-left">
+        <img src="pic3.jpg" alt="CA Jay Mehta Office" class="about-img-main">
+        
+ 
+     </div>
+
+      <div class="about-right reveal-right">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">Meet <em>CA Jay Mehta</em></h2>
+
+        <div class="about-credentials">
+          <div class="cred-pill">FCA</div>
+          <div class="cred-pill">CMA</div>
+	  <div class="cred-pill">DISA</div>
+          <div class="cred-pill">B.Com</div>
+          <div class="cred-pill">ICAI Member</div>
+        
+  <div class="cred-pill">Surat, Gujarat</div>
+        </div>
+
+        <p class="about-text">
+          Jay Mehta is a qualified Chartered Accountant and a member of the Institute of Chartered Accountants of India (ICAI) since 2017, with expertise in ITR Filing, Audit & Assurance, Taxation Compliance, GST Compliance, and Corporate Advisory Services.
+</p>
+        <p class="about-text" style="margin-top:-16px;">
+          He has extensive experience working with startups, SMEs, corporates, and overseas businesses, helping them manage taxation, regulatory compliance, financial reporting, and business operations efficiently in India.
+</p>
+	<p class="about-text" style="margin-top:-16px;">
+          His core areas of expertise include Income Tax Return Filing, Statutory Audit, Internal Audit, GST Advisory, ROC Compliance, Corporate Tax Planning, and Business Consulting.
+</p>
+	<p class="about-text" style="margin-top:-16px;">
+          Known for his practical approach and strong understanding of Indian tax laws and corporate regulations, Jay focuses on delivering accurate, timely, and business-oriented financial solutions that help clients stay compliant and grow confidently.
+</p>
+
+        <div class="about-features">
+          <div class="about-feat">
+            <div class="feat-icon">⚖️</div>
+            <div>
+              <div class="feat-text">ICAI Certified</div>
+              <div class="feat-sub">Fully licensed & registered</div>
+            </div>
+         
+ </div>
+          <div class="about-feat">
+            <div class="feat-icon">🎯</div>
+            <div>
+              <div class="feat-text">Proactive Advisory</div>
+              <div class="feat-sub">Not just compliance</div>
+            </div>
+          </div>
+        
+  <div class="about-feat">
+            <div class="feat-icon">⚡</div>
+            <div>
+              <div class="feat-text">Fast Turnaround</div>
+              <div class="feat-sub">Zero delays policy</div>
+            </div>
+          </div>
+          <div class="about-feat">
+      
+      <div class="feat-icon">🤝</div>
+            <div>
+              <div class="feat-text">Client-First</div>
+              <div class="feat-sub">Personalized solutions</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a 
+href="tel:+918690611515" class="btn-primary"><span>📞 Speak with an Expert</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Our <em>Expert</em><br>Services</h2>
+      </div>
+      <div>
+        <p class="section-desc">Comprehensive financial & legal solutions tailored for businesses across India.
+Each service delivered with expertise, accuracy and care.</p>
+        <br>
+        <a href="tel:+918690611515" class="btn-outline" style="display:inline-flex;">
+          <span>Request Custom Call →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="services-dashboard reveal-scale">
+      <div class="services-tabs-sidebar">
+        <button class="svc-tab-btn active" onclick="switchService(0)">GST Advisory <span>→</span></button>
+        <button class="svc-tab-btn" onclick="switchService(1)">Accounting & Bookkeeping <span>→</span></button>
+    
+    <button class="svc-tab-btn" onclick="switchService(2)">Income Tax Advisory <span>→</span></button>
+        <button class="svc-tab-btn" onclick="switchService(3)">International Taxation <span>→</span></button>
+        <button class="svc-tab-btn" onclick="switchService(4)">Corporate Services <span>→</span></button>
+        <button class="svc-tab-btn" onclick="switchService(5)">Internal Controls & Audit <span>→</span></button>
+        <button class="svc-tab-btn" onclick="switchService(6)">Management Consulting <span>→</span></button>
+        <button class="svc-tab-btn" onclick="switchService(7)">Business Process Outsourcing <span>→</span></button>
+      </div>
+
+      <div class="services-content-pane" id="servicesContentPane">
+        <div class="svc-display-case">
+     
+     <div class="svc-info-block">
+            <h3 id="svcTitle">GST Advisory & Compliance</h3>
+            <p id="svcDesc">Professional GST consultancy solutions including registration, filing, compliance management, and litigation support for businesses of all scales.</p>
+            <div class="svc-grid-points" id="svcPoints">
+              <div class="svc-list-item">GST Registration & Amendment</div>
+              <div class="svc-list-item">Monthly/Quarterly Return 
+Filing</div>
+              <div class="svc-list-item">Annual GSTR-9 & Audit</div>
+              <div class="svc-list-item">GST Notices & Litigation</div>
+              <div class="svc-list-item">Input Tax Credit Optimization</div>
+              <div class="svc-list-item">E-way Bill & E-invoice Setup</div>
+              <div class="svc-list-item">GST Refund Claims</div>
+          
+    <div class="svc-list-item">Department Representation</div>
+            </div>
+            <a 
+  href="https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20want%20assistance%20for%20GST%20services."
+target="_blank"
+  class="sc-cta"
+  id="svcCtaLink"
+>
+  <span id="svcCtaText">💬 WhatsApp for GST Service</span>
+</a>
+          </div>
+          <div class="svc-visual-block">
+            <img src="pic4.jpg" alt="Office Interiors Workspace Backdrop">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:64px;">
+      <p style="color:var(--text-mid);font-size:17px;margin-bottom:24px;">Not sure which service you need?
+Let's have a free conversation.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="tel:+918690611515" class="btn-primary"><span>📞 Call for Free Evaluation</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;flex-wrap:wrap;gap:24px;">
+      <div>
+        <div class="section-label">Client Voices</div>
+        <h2 class="section-title">
+  Trusted by<br><em>Businesses</em> Like Yours</h2>
+      </div>
+      <div>
+        <div style="display:flex;gap:4px;font-size:32px;color:#F59E0B;margin-bottom:8px;">★★★★★</div>
+   
+     <p style="font-size:14px;color:var(--text-mid);font-weight:600;">5.0 Stars · 100+ Google Reviews</p>
+      </div>
+    </div>
+
+    <div class="testimonials-track-wrap">
+      <div class="testimonials-track" id="testiTrack">
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Jay Mehta & Co. has been an absolute game-changer for Sukhsagar Gems. Their GST advisory is spot-on and they handle our compliance with exceptional precision. Highly trustworthy and always available when we need them most."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">D</div>
+            <div>
+              <div class="testi-name">Dhanjibhai Kachariya</div>
+              <div class="testi-role">Proprietor, Sukhsagar Gems</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"As a Director, I need a CA who understands corporate compliance inside out. Jay Mehta & Co. delivers exactly that — from ROC filings to corporate tax planning, they handle everything flawlessly. A true partner for our growth."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">N</div>
+            <div>
+              <div class="testi-name">Nabin Kaini</div>
+              <div class="testi-role">Director, DKG Pvt. Ltd.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Running a print business means tight margins and complex GST on inputs. Jay Mehta & Co. not only streamlined our bookkeeping but also maximised our input tax credit. Their team is proactive, sharp, and always on time."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div>
+              <div class="testi-name">Rohan Makwana</div>
+              <div class="testi-role">Partner, Print Point</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Sarvashwa Graphics has grown significantly and Jay Mehta & Co. has been with us every step of the way. Their accounting and tax advisory is impeccable. I trust them completely with our financials — zero hassles, zero errors."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div>
+              <div class="testi-name">Sanjay Salvi</div>
+              <div class="testi-role">Proprietor, Sarvashwa Graphics</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Import-export businesses have complex GST and FEMA requirements, and Jay Mehta & Co. handles all of it with remarkable expertise. CA Jay Mehta's knowledge of international taxation has been invaluable to Suraj Impex. Truly excellent service."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">C</div>
+            <div>
+              <div class="testi-name">Chirag Shah</div>
+              <div class="testi-role">Proprietor, Suraj Impex</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Jay Mehta & Co. made my income tax filing completely stress-free. They are thorough, honest, and always ensure maximum legitimate savings. I recommend them to everyone I know who needs a reliable and professional CA."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div>
+              <div class="testi-name">Rahul Mehta</div>
+              <div class="testi-role">Individual Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Outstanding service from Jay Mehta & Co.! My ITR filings and tax planning are handled with great care and attention to detail. The team is responsive and always clarifies every doubt patiently. Couldn't ask for a better CA firm."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div>
+              <div class="testi-name">Ravi Shah</div>
+              <div class="testi-role">Individual Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"As a fellow CA, I hold Jay Mehta & Co. to the highest standards — and they consistently exceed them. Their GST advisory and audit work is meticulous and well-documented. A firm that upholds the true spirit of the profession."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">CA Akshat Sanghvi</div>
+              <div class="testi-role">Chartered Accountant</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Jay Mehta & Co. provides top-tier financial advisory and tax planning. Their depth of knowledge is impressive and their execution is even better. My accounts have never been more organised. Highly recommended to any serious business owner."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">D</div>
+            <div>
+              <div class="testi-name">Dhaval Sheth</div>
+              <div class="testi-role">Business Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"I've worked with several CA firms over the years, but Jay Mehta & Co. stands apart. Their strategic advice helped me restructure my finances and achieve significant tax efficiency. Reliable, professional, and genuinely committed to clients."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">K</div>
+            <div>
+              <div class="testi-name">Kumar Trevadiya</div>
+              <div class="testi-role">Business Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Excellent CA firm with deep expertise. Jay Mehta & Co. handles my GST returns and income tax filings seamlessly every year. The team is always reachable, deadline-conscious, and delivers work of the highest quality. Very satisfied."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">F</div>
+            <div>
+              <div class="testi-name">Fahim Shaikh</div>
+              <div class="testi-role">Business Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Jay Mehta & Co. has been managing our accounts and GST compliance for years. Their structured approach and attention to detail give us complete peace of mind. A CA firm that truly understands the ground realities of running a business."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">B</div>
+            <div>
+              <div class="testi-name">Bharat Patel</div>
+              <div class="testi-role">Business Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Professional, punctual, and precise — that's how I describe Jay Mehta & Co. They have brought tremendous clarity to my tax and compliance matters. I never have to worry about deadlines or notices anymore. Superb team and superb service."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">J</div>
+            <div>
+              <div class="testi-name">Jasvant Solanki</div>
+              <div class="testi-role">Business Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"I've relied on Jay Mehta & Co. for all my tax and accounting needs and they have never disappointed. Their transparent communication and deep expertise make them stand out. A firm you can trust completely with your financial affairs."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Arvind Solanki</div>
+              <div class="testi-role">Business Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Jay Mehta & Co. has been instrumental in keeping our compliance flawless. Their audit and advisory support is thorough and incredibly well-timed. I appreciate how they break down complex tax matters into simple, actionable guidance. Five stars without hesitation."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Amarsingh Vaghela</div>
+              <div class="testi-role">Business Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"The level of service Jay Mehta & Co. provides is truly exceptional. From income tax planning to GST advisory, they cover every angle with expertise and care. My financial matters are in the best possible hands. I recommend them wholeheartedly."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">V</div>
+            <div>
+              <div class="testi-name">Virag Shah</div>
+              <div class="testi-role">Business Client</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="testi-controls" id="testiControls">
+      </div>
+
+    <div style="text-align:center;margin-top:48px;">
+      <a href="tel:+918690611515" class="btn-primary"><span>📞 Call to Initiate Onboarding</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="office">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <div class="section-label" style="justify-content:center;">Our Space</div>
+      <h2 class="section-title" style="text-align:center;">A Workspace Built for<br><em>Excellence</em></h2>
+      <p class="section-desc" style="margin:16px auto 0;text-align:center;">Modern, professional and meticulously designed 
+to deliver the best client experience in Surat.</p>
+    </div>
+
+    <div class="office-masonry reveal-scale">
+      <div class="office-img office-img-1">
+        <img src="pic5.jpg" alt="Jay Mehta & Co. Office Entrance Surat">
+        <div class="office-overlay"><span>📍 Our Office Entrance, Surat</span></div>
+      </div>
+      <div class="office-img office-img-2">
+        <img src="pic4.jpg" alt="CA Jay Mehta Work Cabin">
+        <div class="office-overlay"><span>🪑 Principal's Cabin</span></div>
+      </div>
+ 
+     <div class="office-img office-img-3">
+        <img src="pic3.jpg" alt="CA Jay Mehta Chartered Accountant">
+        <div class="office-overlay"><span>👔 CA Jay Mehta — FCA, CMA</span></div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px;">
+      <a href="https://maps.google.com/?q=Surat,Gujarat" target="_blank" class="btn-outline">📍 Visit Us in Surat</a>
+    </div>
+  </div>
+</section>
+
+<section id="blog">
+  <div class="container">
+
+    <div class="blog-header reveal">
+      <div>
+        <div 
+class="section-label">Insights & Updates</div>
+        <h2 class="section-title">Tax, Finance &<br><em>Legal Insights</em></h2>
+        <p class="section-desc">Expert commentary on GST, income tax, corporate law and financial planning — straight from our CA desk.</p>
+      </div>
+    </div>
+
+    <div id="blogLoading" style="text-align:center;padding:80px 0;">
+      <div class="blog-spinner"></div>
+      <p style="color:var(--text-light);font-size:15px;margin-top:20px;">Loading latest articles...</p>
+    </div>
+
+    <div id="blogError" style="display:none;text-align:center;padding:60px 0;">
+   
+   <div style="font-size:48px;margin-bottom:16px;">📭</div>
+      <p style="color:var(--text-mid);font-size:16px;">Could not load articles right now.
+Please check back soon.</p>
+    </div>
+
+    <div id="blogContent" style="display:none;">
+      <div class="blog-grid" id="blogMainGrid"></div>
+
+      <div class="blog-small-grid reveal" id="blogSmallGrid" style="margin-top:28px;"></div>
+    </div>
+
+    <div id="blogEmpty" style="display:none;text-align:center;padding:80px 0;">
+      <div style="font-size:56px;margin-bottom:20px;">✍️</div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--navy);margin-bottom:12px;">Articles Coming Soon</h3>
+  
+    <p style="color:var(--text-mid);font-size:16px;">Our team is working on insightful content.
+Check back shortly!</p>
+    </div>
+
+
+
+  </div>
+</section>
+
+<div id="blogModal" style="display:none;position:fixed;inset:0;z-index:2000;overflow-y:auto;background:rgba(11,29,65,0.7);backdrop-filter:blur(8px);">
+  <div style="min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;">
+    <div id="blogModalInner" style="background:white;border-radius:var(--radius-lg);max-width:800px;width:100%;position:relative;box-shadow:var(--shadow-lg);overflow:hidden;">
+
+      <div style="background:linear-gradient(135deg,var(--navy),var(--blue));padding:28px 40px;position:relative;">
+        <button onclick="closeBlogModal()" style="position:absolute;top:20px;right:24px;background:rgba(255,255,255,0.15);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;"
+onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">✕</button>
+        <div id="modalCategory" style="display:inline-block;background:rgba(255,255,255,0.15);color:white;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:14px;"></div>
+        <h2 id="modalTitle" style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,40px);font-weight:700;color:white;line-height:1.2;margin-bottom:16px;padding-right:48px;"></h2>
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:13px;">JM</div>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:white;">CA Jay Mehta</div>
+              <div 
+id="modalDate" style="font-size:11px;color:rgba(255,255,255,0.7);"></div>
+            </div>
+          </div>
+          <div id="modalReadTime" style="font-size:12px;color:rgba(255,255,255,0.7);"></div>
+        </div>
+      </div>
+
+      <div id="modalBody" style="padding:40px 48px;font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.9;color:var(--text-mid);"></div>
+
+      <div style="padding:24px 48px 40px;border-top:1px solid var(--border);">
+        <a href="tel:+918690611515" class="btn-primary" style="display:inline-flex;"><span>📞 
+Book a Free Consultation</span></a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="cta-banner reveal-scale">
+    <h2>Ready to Secure Your<br>Financial Future?</h2>
+    <p>Book a free consultation today.
+No obligations, just expert advice.</p>
+    <div class="cta-banner-btns">
+      <a href="tel:+918690611515" class="btn-cta-white">📞 Call For Free Consultation</a>
+    </div>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <div class="section-label" style="justify-content:center;">Get In Touch</div>
+      <h2 class="section-title" style="text-align:center;">Let's Build Your<br><em>Financial Foundation</em></h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <h3 class="ci-title">We're Here<br>for You</h3>
+        <p class="ci-desc">Reach out via phone, email or 
+WhatsApp. Our team responds within minutes during business hours.</p>
+
+        <div class="ci-items">
+          <div class="ci-item">
+            <div class="ci-icon">📞</div>
+            <div class="ci-detail">
+              <strong>Phone</strong>
+              +91 86906 11515
+            </div>
+    
+      </div>
+          <div class="ci-item">
+            <div class="ci-icon">✉️</div>
+            <div class="ci-detail">
+              <strong>Email</strong>
+              info.jaymehta@gmail.com
+            </div>
+          </div>
+       
+   <div class="ci-item">
+            <div class="ci-icon">📍</div>
+            <div class="ci-detail">
+              <strong>Office</strong>
+              Surat, Gujarat, India
+            </div>
+          </div>
+          <div class="ci-item">
+       
+     <div class="ci-icon">🕐</div>
+            <div class="ci-detail">
+              <strong>Hours</strong>
+              Mon–Sat: 10:00 AM – 7:00 PM
+            </div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/918690611515?text=Hello%20CA%20Jay%20Mehta!%20I%20want%20to%20book%20a%20consultation."
+class="wa-cta-box" target="_blank">
+          <div class="wa-cta-text">
+            <strong>Chat on WhatsApp</strong>
+            <span>Get instant replies — we're online!</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="contact-form-wrap reveal-right">
+        <div class="form-title">Send a Message</div>
+        <p class="form-sub">We'll respond within 24 hours.
+Or WhatsApp for instant help!</p>
+
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+   
+           <label>Phone Number *</label>
+              <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="your@email.com">
+        
+  </div>
+          <div class="form-group">
+            <label>Service Required *</label>
+            <select id="contactServiceSelect" name="service" required>
+              <option value="">Select a service...</option>
+              <option value="GST Advisory & Compliance">GST Advisory & Compliance</option>
+              <option value="Accounting & Bookkeeping">Accounting & Bookkeeping</option>
+  
+            <option value="Income Tax Advisory">Income Tax Advisory</option>
+              <option value="International Taxation">International Taxation</option>
+              <option value="Corporate Services">Corporate Services</option>
+              <option value="Internal Controls & Audit">Internal Controls & Audit</option>
+              <option value="Management Consulting">Management Consulting</option>
+           
+   <option value="Business Process Outsourcing">Business Process Outsourcing</option>
+              <option value="Multiple Services">Multiple Services</option>
+              <option value="Other / Not Sure">Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your Message</label>
+        
+    <textarea name="message" placeholder="Tell us about your requirements, business type, or any specific questions..."></textarea>
+          </div>
+          <div style="margin-bottom:16px;">
+            <p style="font-size:12px;color:var(--text-light);">Alternatively, connect immediately over <a href="https://wa.me/918690611515" style="color:var(--blue);font-weight:600;"
+target="_blank">WhatsApp: +91 86906 11515</a></p>
+          </div>
+          <button type="submit" class="btn-submit">📨 Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logos">
+          <div class="footer-logo-combo-mask">
+            <img src="pic1.png" alt="CA India Official Brand Badge" class="ca-badge-footer">
+          </div>
+        </div>
+        <p>Jay Mehta & Co. is a premier Chartered Accountancy firm in Surat, Gujarat.
+We deliver excellence in taxation, audit, corporate and international financial services.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/918690611515" class="social-btn" target="_blank">💬</a>
+          <a href="mailto:info.jaymehta@gmail.com" class="social-btn">✉️</a>
+          <a href="tel:+918690611515" class="social-btn">📞</a>
+          <a href="https://maps.google.com/?q=Surat,Gujarat" class="social-btn" target="_blank">📍</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+ 
+       <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About CA Jay Mehta</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#testimonials">Client Reviews</a></li>
+          <li><a href="#blog">Blog & Insights</a></li>
+          <li><a href="#office">Our Office</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+       
+ </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">GST Advisory</a></li>
+          <li><a href="#services">Income Tax</a></li>
+          <li><a href="#services">Accounting</a></li>
+          <li><a href="#services">International Tax</a></li>
+          <li><a href="#services">Corporate Services</a></li>
+          <li><a 
+href="#services">Audit</a></li>
+          <li><a href="#services">Management Consulting</a></li>
+          <li><a href="#services">BPO Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+918690611515">📞 +91 86906 11515</a></li>
+          <li><a href="mailto:info.jaymehta@gmail.com">✉️ info.jaymehta@gmail.com</a></li>
+          <li>📍 Surat, Gujarat, 
+India</li>
+          <li>🕐 Mon–Sat: 10 AM–7 PM</li>
+        </ul>
+        <br>
+        <a href="https://wa.me/918690611515" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;padding:12px 20px;border-radius:12px;font-size:13px;font-weight:700;margin-top:8px;">
+          <span>WhatsApp Now</span>
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Gov. Portals</h4>
+        <ul>
+          <li><a href="https://www.incometax.gov.in/iec/foportal/" target="_blank">🏛️ Income Tax of India</a></li>
+          <li><a href="https://www.gst.gov.in/" target="_blank">📋 Goods &amp; Service Tax</a></li>
+          <li><a href="https://www.dgft.gov.in/CP/" target="_blank">🌐 Director General of Foreign Trade</a></li>
+          <li><a href="https://www.udyamregistration.gov.in/" target="_blank">🏭 Ministry of Udyog</a></li>
+          <li><a href="https://www.mca.gov.in/" target="_blank">⚖️ Companies Act of India</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Jay Mehta & Co. |
+Chartered Accountants, Surat, Gujarat</p>
+      <p>FCA · CMA · B.Com |
+ICAI Registered Firm</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918690611515?text=Hello%20CA%20Jay%20Mehta!%20I%20want%20to%20book%20a%20free%20consultation."
+class="wa-float" target="_blank">
+  <div class="wa-float-btn">
+    <span class="wa-icon">
+      <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor; display: block;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66 1.01 3.298 1.558 5.347 1.559 5.423 0 9.834-4.412 9.837-9.838.001-2.628-1.021-5.1-2.88-6.961C17.034 2.052 14.561 1.03 12.012 1.03c-5.424 0-9.835 4.412-9.838 9.839-.001 2.112.564 4.15 1.636 5.92l-.993 3.626 3.832-.981zM16.711 13.9c-.27-.135-1.602-.79-1.849-.882-.247-.091-.427-.136-.607.135-.18.27-.697.882-.855 1.062-.158.18-.315.203-.585.068-.27-.135-1.14-.42-2.172-1.341-.803-.715-1.345-1.6-1.503-1.871-.158-.27-.017-.416.118-.551.121-.122.27-.315.405-.472.135-.158.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.607-1.463-.831-2.003-.219-.527-.44-.455-.607-.463-.158-.007-.338-.009-.517-.009-.18 0-.473.067-.72.337-.247.27-.945.923-.945 2.25s.967 2.61 1.102 2.79c.135.18 1.902 2.904 4.609 4.074.645.278 1.148.445 1.54.57.649.206 1.24.177 1.707.107.52-.078 1.602-.656 1.828-1.29.225-.633.225-1.18.157-1.291-.067-.113-.247-.203-.517-.339z"/></svg>
+    </span>
+    <span class="wa-text">WhatsApp Us</span>
+  </div>
+</a>
+
+<div class="scroll-top" 
+id="scrollTop">↑</div>
+
+<script>
+gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
+
+// ===== SERVICES STORAGE OVERVIEW DATA GENERATOR =====
+const servicesData = [
+  {
+title: "GST Advisory & Compliance",
+desc: "Professional GST consultancy solutions including registration, filing, compliance management, and litigation support for businesses of all scales.",
+points: [
+"GST Registration & Amendment",
+"Monthly/Quarterly Return Filing",
+"Annual GSTR-9 & Audit",
+"GST Notices & Litigation",
+"Input Tax Credit Optimization",
+"E-way Bill & E-invoice Setup",
+"GST Refund Claims",
+"Department Representation"
+],
+cta: "💬 WhatsApp for GST Service",
+link: "https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20want%20assistance%20for%20GST%20Advisory%20%26%20Compliance%20services."
+},
+
+{
+title: "Accounting & Bookkeeping",
+desc: "Complete accounting and bookkeeping services designed to maintain accurate financial records and improve operational efficiency.",
+points: [
+"Bookkeeping & Accounting",
+"Financial Statement Preparation",
+"Bank Reconciliation",
+"MIS Reporting",
+"Payroll Processing",
+"Accounts Payable & Receivable",
+"Tally & Cloud Accounting",
+"Virtual CFO Support"
+],
+cta: "💬 WhatsApp for Accounting",
+link: "https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20need%20Accounting%20%26%20Bookkeeping%20services%20for%20my%20business."
+},
+
+{
+title: "Income Tax Advisory",
+desc: "Expert income tax planning, return filing, and litigation support for individuals, firms, companies, and professionals.",
+points: [
+"Income Tax Return Filing",
+"Tax Planning & Advisory",
+"Scrutiny & Notices",
+"TDS/TCS Compliance",
+"Capital Gain Advisory",
+"Advance Tax Computation",
+"Business Taxation",
+"Tax Representation"
+],
+cta: "💬 WhatsApp for ITR Filing",
+link: "https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20want%20help%20with%20Income%20Tax%20Return%20filing%20and%20tax%20advisory."
+},
+
+{
+title: "International Taxation",
+desc: "Strategic international tax solutions for NRI clients, overseas businesses, and cross-border transactions.",
+points: [
+"NRI Taxation",
+"DTAA Advisory",
+"Foreign Remittance Compliance",
+"Transfer Pricing Support",
+"Cross-border Structuring",
+"International Tax Planning",
+"FEMA Compliance",
+"Global Business Advisory"
+],
+cta: "💬 WhatsApp for International Tax",
+link: "https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20need%20assistance%20for%20International%20Taxation%20services."
+},
+
+{
+title: "Corporate Services",
+desc: "Comprehensive corporate compliance and legal support for startups, SMEs, and established companies.",
+points: [
+"Company Incorporation",
+"ROC Compliance",
+"Annual Filings",
+"LLP Registration",
+"Director Compliance",
+"Share Transfer & Restructuring",
+"Corporate Documentation",
+"Startup Advisory"
+],
+cta: "💬 WhatsApp for Corporate Services",
+link: "https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20am%20interested%20in%20Corporate%20Compliance%20and%20Company%20services."
+},
+
+{
+title: "Internal Controls & Audit",
+desc: "Robust audit and internal control systems to improve governance, compliance, and operational transparency.",
+points: [
+"Statutory Audit",
+"Internal Audit",
+"Tax Audit",
+"Process Review",
+"Risk Assessment",
+"Internal Control Systems",
+"Compliance Audit",
+"Operational Audit"
+],
+cta: "💬 WhatsApp for Audit Services",
+link: "https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20need%20Audit%20and%20Internal%20Control%20services."
+},
+
+{
+title: "Management Consulting",
+desc: "Business-focused consulting solutions to improve profitability, efficiency, growth, and strategic planning.",
+points: [
+"Business Strategy",
+"Financial Planning",
+"Process Optimization",
+"Performance Analysis",
+"Budgeting & Forecasting",
+"Growth Consulting",
+"Startup Mentorship",
+"Business Structuring"
+],
+cta: "💬 WhatsApp for Consulting",
+link: "https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20want%20Management%20Consulting%20services%20for%20my%20business."
+},
+
+{
+title: "Business Process Outsourcing",
+desc: "Reliable outsourcing solutions helping businesses reduce operational burden and focus on growth.",
+points: [
+"Accounting Outsourcing",
+"Payroll Outsourcing",
+"Compliance Management",
+"Virtual Back Office",
+"Data Processing",
+"Financial Reporting",
+"Remote Accounting Support",
+"Customized BPO Services"
+],
+cta: "💬 WhatsApp for BPO Services",
+link: "https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20am%20interested%20in%20Business%20Process%20Outsourcing%20services."
+}
+];
+
+function switchService(index) {
+  const buttons = document.querySelectorAll('.svc-tab-btn');
+  buttons.forEach((btn, idx) => {
+    btn.classList.toggle('active', idx === index);
+  });
+const data = servicesData[index];
+  const pane = document.getElementById('servicesContentPane');
+
+  if (pane) {
+    gsap.to(pane, {
+      opacity: 0,
+      y: 15,
+      duration: 0.25,
+      onComplete: () => {
+        document.getElementById('svcTitle').textContent = data.title;
+        document.getElementById('svcDesc').textContent = data.desc;
+        document.getElementById('svcCtaText').textContent = data.cta;
+        
+        const pointsContainer = document.getElementById('svcPoints');
+      
+  pointsContainer.innerHTML = '';
+        data.points.forEach(pt => {
+          const div = document.createElement('div');
+          div.className = 'svc-list-item';
+          div.textContent = pt;
+          pointsContainer.appendChild(div);
+        });
+        gsap.to(pane, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
+      }
+    });
+}
+}
+
+// Ensure first service initializes properly on load
+window.addEventListener('DOMContentLoaded', () => {
+  switchService(0);
+});
+
+// ===== CURSOR =====
+const cursor = document.getElementById('cursor');
+const follower = document.getElementById('cursorFollower');
+let mouseX=0,mouseY=0,followerX=0,followerY=0;
+
+if(window.innerWidth > 1024){
+  document.addEventListener('mousemove',e=>{
+    mouseX=e.clientX;mouseY=e.clientY;
+    gsap.to(cursor,{x:mouseX-6,y:mouseY-6,duration:0.1});
+  });
+function animateFollower(){
+    followerX+=(mouseX-followerX)*0.1;
+    followerY+=(mouseY-followerY)*0.1;
+    gsap.set(follower,{x:followerX-18,y:followerY-18});
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{gsap.to(follower,{scale:1.8,opacity:0.6,duration:0.3});});
+    el.addEventListener('mouseleave',()=>{gsap.to(follower,{scale:1,opacity:0.4,duration:0.3});});
+  });
+}
+
+// ===== NAVBAR =====
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>80){navbar.classList.add('scrolled');}
+  else{navbar.classList.remove('scrolled');}
+  const scrollTop=document.getElementById('scrollTop');
+  if(window.scrollY>400){scrollTop.classList.add('visible');}
+  else{scrollTop.classList.remove('visible');}
+});
+
+document.getElementById('scrollTop').addEventListener('click',()=>{
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+// ===== MOBILE MENU =====
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+const mobileClose=document.getElementById('mobileClose');
+
+hamburger.addEventListener('click',()=>{
+  mobileMenu.classList.add('open');
+  gsap.fromTo('.mob-link',{y:30,opacity:0},{y:0,opacity:1,duration:0.5,stagger:0.08,ease:'power3.out'});
+});
+mobileClose.addEventListener('click',()=>mobileMenu.classList.remove('open'));
+document.querySelectorAll('.mob-link').forEach(l=>l.addEventListener('click',()=>mobileMenu.classList.remove('open')));
+// ===== HERO_ANIMATION =====
+const heroTl = gsap.timeline({delay:0.3});
+heroTl
+  .from('.hero-badge',{y:30,opacity:0,duration:0.7,ease:'power3.out'})
+  .from('.hero-eyebrow',{y:20,opacity:0,duration:0.5,ease:'power3.out'},'-=0.4')
+  .from('.hero h1',{y:50,opacity:0,duration:0.9,ease:'power3.out'},'-=0.3')
+  .from('.hero-desc',{y:30,opacity:0,duration:0.6,ease:'power3.out'},'-=0.5')
+  .from('.hero-btns',{y:30,opacity:0,duration:0.6,ease:'power3.out'},'-=0.4')
+  .from('.hero-trust',{y:20,opacity:0,duration:0.5,ease:'power3.out'},'-=0.4')
+  .from('.hero-img-wrap',{x:60,opacity:0,duration:1,ease:'power3.out'},'-=0.8')
+  .from('.float-card-1',{x:-40,opacity:0,duration:0.7,ease:'back.out(1.7)'},'-=0.3')
+  .from('.float-card-2',{x:40,opacity:0,duration:0.7,ease:'back.out(1.7)'},'-=0.5')
+  .from('.float-card-3',{x:40,opacity:0,duration:0.7,ease:'back.out(1.7)'},'-=0.4');
+// ===== FLOAT CARD HOVER =====
+gsap.to('.float-card-1',{y:-10,duration:3,repeat:-1,yoyo:true,ease:'sine.inOut',delay:1});
+gsap.to('.float-card-2',{y:-8,duration:2.5,repeat:-1,yoyo:true,ease:'sine.inOut',delay:0.5});
+gsap.to('.float-card-3',{y:-6,duration:3.5,repeat:-1,yoyo:true,ease:'sine.inOut',delay:1.5});
+
+// ===== SCROLL REVEALS =====
+gsap.utils.toArray('.reveal').forEach(el=>{
+  gsap.fromTo(el,{opacity:0,y:50},{opacity:1,y:0,duration:0.9,ease:'power3.out',
+    scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}
+  });
+});
+gsap.utils.toArray('.reveal-left').forEach(el=>{
+  gsap.fromTo(el,{opacity:0,x:-60},{opacity:1,x:0,duration:0.9,ease:'power3.out',
+    scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}
+  });
+});
+gsap.utils.toArray('.reveal-right').forEach(el=>{
+  gsap.fromTo(el,{opacity:0,x:60},{opacity:1,x:0,duration:0.9,ease:'power3.out',
+    scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}
+  });
+});
+gsap.utils.toArray('.reveal-scale').forEach(el=>{
+  gsap.fromTo(el,{opacity:0,scale:0.93},{opacity:1,scale:1,duration:0.8,ease:'power3.out',
+    scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}
+  });
+});
+// ===== STATS RIBBON ANIMATION =====
+ScrollTrigger.create({
+  trigger:'.stats-ribbon',
+  start:'top 95%',
+  onEnter:()=>{
+    gsap.fromTo('.stat-item',
+      {opacity:0,y:30},
+      {opacity:1,y:0,duration:0.6,stagger:0.12,ease:'power3.out'}
+    );
+    startCounters();
+  }
+});
+// ===== COUNTERS UNIFIED FIX =====
+let countersStarted=false;
+function startCounters(){
+  if(countersStarted) return;
+  countersStarted=true;
+document.querySelectorAll('.counter').forEach(counter=>{
+    const target = parseInt(counter.getAttribute('data-target'), 10);
+    const suffix = counter.getAttribute('data-suffix') || '';
+    
+    gsap.fromTo({val:0}, {
+      val: target,
+      duration: 2.5,
+      ease: 'power2.out',
+      onUpdate: function(){
+        counter.textContent = Math.floor(this.targets()[0].val).toLocaleString('en-IN');
+      },
+      onComplete: function(){
+        counter.textContent = target.toLocaleString('en-IN') + suffix;
+      }
+    });
+ 
+  });
+}
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    if(!countersStarted && typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.refresh();
+    }
+  }, 500);
+});
+// ===== TESTIMONIALS SLIDER =====
+const track=document.getElementById('testiTrack');
+const controlsContainer = document.getElementById('testiControls');
+let currentSlide=0;
+let slidesPerView = window.innerWidth > 1024 ?
+3 : window.innerWidth > 768 ? 2 : 1;
+let maxSlide = Math.ceil(16 / slidesPerView) - 1;
+function setupSliderControls() {
+  slidesPerView = window.innerWidth > 1024 ? 3 : window.innerWidth > 768 ? 2 : 1;
+maxSlide = Math.ceil(16 / slidesPerView) - 1;
+  
+  controlsContainer.innerHTML = '';
+for (let i = 0; i <= maxSlide; i++) {
+    const dot = document.createElement('div');
+dot.className = `testi-dot ${i === currentSlide ? 'active' : ''}`;
+    dot.setAttribute('data-index', i);
+    dot.addEventListener('click', () => goToSlide(i));
+    controlsContainer.appendChild(dot);
+}
+  if(currentSlide > maxSlide) { goToSlide(maxSlide); }
+}
+
+function goToSlide(index){
+  if (!track || !track.children.length) return;
+  const cardWidth=track.children[0].getBoundingClientRect().width;
+  const gap=24;
+const offset=-index*(cardWidth+gap)*slidesPerView;
+  gsap.to(track,{x:offset,duration:0.6,ease:'power3.inOut'});
+  
+  const dots = document.querySelectorAll('.testi-dot');
+  dots.forEach((d,i)=>d.classList.toggle('active',i===index));
+  currentSlide=index;
+}
+
+window.addEventListener('resize', () => {
+  setupSliderControls();
+  goToSlide(currentSlide);
+});
+setupSliderControls();
+let autoSlide=setInterval(()=>{
+  goToSlide(currentSlide === maxSlide ? 0 : currentSlide + 1);
+},4500);
+
+track.addEventListener('mouseenter',()=>clearInterval(autoSlide));
+track.addEventListener('mouseleave',()=>{
+  autoSlide=setInterval(()=>goToSlide(currentSlide === maxSlide ? 0 : currentSlide + 1),4500);
+});
+
+// ===== NAVBAR ACTIVE LINKS =====
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a');
+ScrollTrigger.create({
+  trigger: 'body',
+  start: 'top top',
+  end: 'bottom bottom',
+  onUpdate: (self) => {
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 120 && rect.bottom >= 120) {
+        navLinks.forEach(link => {
+          link.style.color = link.getAttribute('href') === '#' + section.id ? 'var(--blue)' : '';
+        });
+      }
+    });
+  }
+});
+// ===== ORB PARALLAX =====
+if(window.innerWidth > 1024){
+  document.addEventListener('mousemove',e=>{
+    const x=(e.clientX/window.innerWidth-0.5)*30;
+    const y=(e.clientY/window.innerHeight-0.5)*30;
+    gsap.to('.orb1',{x:x*0.8,y:y*0.8,duration:1.5,ease:'power1.out'});
+    gsap.to('.orb2',{x:-x*0.6,y:-y*0.6,duration:1.5,ease:'power1.out'});
+    gsap.to('.orb3',{x:x*0.4,y:y*0.4,duration:1.5,ease:'power1.out'});
+  });
+}
+
+// ===== FORM SUBMIT =====
+document.getElementById('contactForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=this.querySelector('.btn-submit');
+  const originalText=btn.textContent;
+  btn.textContent='⏳ Sending...';
+  btn.disabled=true;
+  btn.style.opacity='0.8';
+  try{
+    const data=new FormData(this);
+    const res=await fetch('https://formspree.io/f/mojborvw',{
+      method:'POST',
+      body:data,
+      headers:{Accept:'application/json'}
+    });
+    if(res.ok){
+      btn.textContent='✅ Inquiry Sent!';
+      btn.style.background='linear-gradient(135deg,var(--green-dark),var(--green))';
+      btn.style.opacity='1';
+      gsap.fromTo(btn,{scale:0.95},{scale:1,duration:0.4,ease:'back.out(2)'});
+      this.reset();
+      setTimeout(()=>{
+        btn.textContent=originalText;
+        btn.style.background='';
+        btn.disabled=false;
+      },4000);
+    } else {
+      throw new Error('Server error');
+    }
+  } catch(err){
+    btn.textContent='❌ Failed — Try Again';
+    btn.style.background='linear-gradient(135deg,#c0392b,#e74c3c)';
+    btn.style.opacity='1';
+    btn.disabled=false;
+    setTimeout(()=>{
+      btn.textContent=originalText;
+      btn.style.background='';
+    },4000);
+  }
+});
+// ===== ABOUT FEATURES STAGGER =====
+ScrollTrigger.create({
+  trigger:'.about-features',
+  start:'top 85%',
+  onEnter:()=>{
+    gsap.fromTo('.about-feat',
+      {opacity:0,y:30},
+      {opacity:1,y:0,duration:0.5,stagger:0.12,ease:'power3.out'}
+    );
+  }
+});
+// ===== OFFICE IMAGES =====
+ScrollTrigger.create({
+  trigger:'.office-masonry',
+  start:'top 85%',
+  onEnter:()=>{
+    gsap.fromTo('.office-img',
+      {opacity:0,y:40},
+      {opacity:1,y:0,duration:0.8,stagger:0.15,ease:'power3.out'}
+    );
+  }
+});
+// ===== CTA BANNER =====
+ScrollTrigger.create({
+  trigger:'.cta-banner',
+  start:'top 85%',
+  onEnter:()=>{
+    gsap.fromTo('.cta-banner',{opacity:0,scale:0.96},{opacity:1,scale:1,duration:0.8,ease:'power3.out'});
+    gsap.fromTo('.cta-banner h2',{y:30,opacity:0},{y:0,opacity:1,duration:0.7,delay:0.2,ease:'power3.out'});
+    gsap.fromTo('.cta-banner p',{y:20,opacity:0},{y:0,opacity:1,duration:0.6,delay:0.35,ease:'power3.out'});
+    gsap.fromTo('.cta-banner-btns',{y:20,opacity:0},{y:0,opacity:1,duration:0.6,delay:0.5,ease:'power3.out'});
+  }
+});
+// ===== FOOTER =====
+ScrollTrigger.create({
+  trigger:'footer',
+  start:'top 90%',
+  onEnter:()=>{
+    gsap.fromTo('.footer-grid > *',
+      {opacity:0,y:30},
+      {opacity:1,y:0,duration:0.6,stagger:0.12,ease:'power3.out'}
+    );
+  }
+});
+// ===== WA FLOAT ANIMATION =====
+gsap.fromTo('.wa-float',{scale:0,opacity:0},{scale:1,opacity:1,duration:0.7,delay:2.5,ease:'back.out(2)'});
+
+// ===== CONTENTFUL BLOG INTEGRATION =====
+const CONTENTFUL_SPACE = 'yi5lnhhzm28i';
+const CONTENTFUL_TOKEN = 'eM5dD-zl8d0pWwXB92h4WOzdWP0osiKkEVoNcXjFtUE';
+const CONTENTFUL_API   = `https://cdn.contentful.com/spaces/${CONTENTFUL_SPACE}/entries`;
+
+// Category → emoji + gradient mapping
+const CATEGORY_MAP = {
+  'GST':              { emoji:'📊', grad:'linear-gradient(135deg,#0B2D6B,#0B57D0,#13C653)' },
+  'Income Tax':       { emoji:'📋', grad:'linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)' },
+  'NRI Taxation':     { emoji:'🌏', grad:'linear-gradient(135deg,#134e5e,#71b280)' },
+  'Corporate':        { emoji:'🚀', grad:'linear-gradient(135deg,#E8630A,#C9960C)' },
+  'TDS':              { emoji:'💸', grad:'linear-gradient(135deg,#4b0082,#0B57D0)' },
+  'Audit':        
+    { emoji:'🔍', grad:'linear-gradient(135deg,#0B2D6B,#1a68e0,#13C653)' },
+  'Management':       { emoji:'📈', grad:'linear-gradient(135deg,#0B57D0,#13C653)' },
+  'International':    { emoji:'🌐', grad:'linear-gradient(135deg,#134e5e,#0B57D0)' },
+};
+function getCategoryStyle(cat) {
+  const key = Object.keys(CATEGORY_MAP).find(k => cat && cat.toLowerCase().includes(k.toLowerCase()));
+  return key ?
+CATEGORY_MAP[key] : { emoji:'📄', grad:'linear-gradient(135deg,#0B2D6B,#0B57D0)' };
+}
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+return new Date(dateStr).toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' });
+}
+
+// Convert Contentful Rich Text JSON → HTML
+function richTextToHtml(node) {
+  if (!node) return '';
+if (node.nodeType === 'document') return node.content.map(richTextToHtml).join('');
+  if (node.nodeType === 'paragraph') {
+    const inner = node.content.map(richTextToHtml).join('');
+return inner.trim() ? `<p>${inner}</p>` : '';
+  }
+  if (node.nodeType === 'heading-1') return `<h1>${node.content.map(richTextToHtml).join('')}</h1>`;
+  if (node.nodeType === 'heading-2') return `<h2>${node.content.map(richTextToHtml).join('')}</h2>`;
+if (node.nodeType === 'heading-3') return `<h3>${node.content.map(richTextToHtml).join('')}</h3>`;
+  if (node.nodeType === 'heading-4') return `<h4>${node.content.map(richTextToHtml).join('')}</h4>`;
+  if (node.nodeType === 'unordered-list') return `<ul>${node.content.map(richTextToHtml).join('')}</ul>`;
+if (node.nodeType === 'ordered-list') return `<ol>${node.content.map(richTextToHtml).join('')}</ol>`;
+  if (node.nodeType === 'list-item') return `<li>${node.content.map(richTextToHtml).join('')}</li>`;
+  if (node.nodeType === 'blockquote') return `<blockquote>${node.content.map(richTextToHtml).join('')}</blockquote>`;
+if (node.nodeType === 'hr') return `<hr>`;
+  if (node.nodeType === 'text') {
+    let t = node.value.replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>');
+if (node.marks) {
+      node.marks.forEach(m => {
+        if (m.type === 'bold') t = `<strong>${t}</strong>`;
+        if (m.type === 'italic') t = `<em>${t}</em>`;
+        if (m.type === 'underline') t = `<u>${t}</u>`;
+        if (m.type === 'code') t = `<code>${t}</code>`;
+      });
+}
+    return t;
+  }
+  if (node.content) return node.content.map(richTextToHtml).join('');
+  return '';
+}
+
+// Build featured card HTML (first post)
+function buildFeaturedCard(post, imageUrl) {
+  const f = post.fields;
+  const cat = f.category ||
+'General';
+  const cs = getCategoryStyle(cat);
+  const imgHtml = imageUrl
+    ?
+`<img src="${imageUrl}" alt="${f.title || ''}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">`
+    : `<div style="height:100%;background:${cs.grad};display:flex;align-items:center;justify-content:center;font-size:72px;">${cs.emoji}</div>`;
+return `
+    <div class="blog-card blog-card-featured reveal-left" onclick="openBlogModal(${JSON.stringify(post).replace(/"/g,'"')})" style="cursor:pointer;">
+      <div class="blog-card-img" style="height:320px;overflow:hidden;">${imgHtml}</div>
+      <div class="blog-card-body">
+        <div class="blog-tag">📌 ${cat}</div>
+        <h3>${f.title || ''}</h3>
+        <p class="blog-excerpt">${f.excerpt || ''}</p>
+        <div class="blog-meta">
+          <div class="blog-author">
+            <div class="blog-author-avatar">JM</div>
+           
+ <div>
+              <div class="blog-author-name">CA Jay Mehta</div>
+              <div class="blog-date">${formatDate(f.publishedDate)}</div>
+            </div>
+          </div>
+          <span class="blog-read-time">⏱ ${f.readTime || '5 min read'}</span>
+        </div>
+        <span class="blog-read-link">Read Full Article →</span>
+      </div>
+   
+ </div>`;
+}
+
+// Build side card HTML (posts 2 & 3)
+function buildSideCard(post, imageUrl) {
+  const f = post.fields;
+const cat = f.category || 'General';
+  const cs = getCategoryStyle(cat);
+  const imgHtml = imageUrl
+    ?
+`<img src="${imageUrl}" alt="${f.title || ''}" style="width:100%;height:180px;object-fit:cover;display:block;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">`
+    : `<div style="height:180px;background:${cs.grad};display:flex;align-items:center;justify-content:center;font-size:48px;">${cs.emoji}</div>`;
+return `
+    <div class="blog-card blog-card-side reveal-right" onclick="openBlogModal(${JSON.stringify(post).replace(/"/g,'"')})" style="cursor:pointer;">
+      <div class="blog-card-img" style="overflow:hidden;">${imgHtml}</div>
+      <div class="blog-card-body">
+        <div class="blog-tag">📌 ${cat}</div>
+        <h3>${f.title || ''}</h3>
+        <div class="blog-meta">
+          <div class="blog-author">
+            <div class="blog-author-avatar">JM</div>
+            <div>
+          
+    <div class="blog-author-name">CA Jay Mehta</div>
+              <div class="blog-date">${formatDate(f.publishedDate)}</div>
+            </div>
+          </div>
+          <span class="blog-read-time">⏱ ${f.readTime || '5 min'}</span>
+        </div>
+        <span class="blog-read-link">Read Article →</span>
+      </div>
+    </div>`;
+}
+
+// Build small card HTML (posts 4–7)
+function buildSmallCard(post, imageUrl) {
+  const 
+f = post.fields;
+  const cat = f.category || 'General';
+  const cs = getCategoryStyle(cat);
+const imgHtml = imageUrl
+    ? `<img src="${imageUrl}" alt="${f.title || ''}" style="width:100%;height:120px;object-fit:cover;display:block;transition:transform 0.5s ease;"
+onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">`
+    : `<div style="height:120px;background:${cs.grad};display:flex;align-items:center;justify-content:center;font-size:36px;">${cs.emoji}</div>`;
+  return `
+    <div class="blog-card-small" onclick="openBlogModal(${JSON.stringify(post).replace(/"/g,'"')})" style="cursor:pointer;">
+      <div class="blog-card-small-img" style="overflow:hidden;">${imgHtml}</div>
+      <div class="blog-card-small-body">
+        <span class="blog-date">${formatDate(f.publishedDate)}</span>
+        <div class="blog-tag" style="margin:8px 0 10px;">${cat}</div>
+        <h4>${f.title || ''}</h4>
+        <span class="blog-read-link" style="font-size:12px;">Read →</span>
+      </div>
+    </div>`;
+}
+
+// Open modal with full post
+function openBlogModal(post) {
+  if (typeof post === 'string') {
+   
+ try { post = JSON.parse(post); } catch(e) { return; }
+  }
+  const f = post.fields;
+  const cat = f.category || 'Article';
+  const cs = getCategoryStyle(cat);
+
+  // Resolve cover image from the already-built card's img src if available
+  // We re-fetch the asset URL from Contentful includes stored in window._cfAssets
+  let imgUrl = null;
+  if (window._cfAssets && f.coverImage && f.coverImage.sys) {
+    imgUrl = window._cfAssets[f.coverImage.sys.id] ||
+null;
+  }
+
+  // Build modal cover
+  const modalInner = document.getElementById('blogModalInner');
+  const existingCover = document.getElementById('modalCoverImg');
+  if (existingCover) existingCover.remove();
+if (imgUrl) {
+    const coverDiv = document.createElement('div');
+    coverDiv.id = 'modalCoverImg';
+    coverDiv.style.cssText = 'width:100%;height:280px;overflow:hidden;';
+coverDiv.innerHTML = `<img src="${imgUrl}" alt="${f.title||''}" style="width:100%;height:100%;object-fit:cover;display:block;">`;
+    modalInner.insertBefore(coverDiv, modalInner.firstChild);
+  }
+
+  document.getElementById('modalCategory').textContent = cat;
+  document.getElementById('modalTitle').textContent = f.title || '';
+document.getElementById('modalDate').textContent = formatDate(f.publishedDate);
+  document.getElementById('modalReadTime').textContent = f.readTime ? '⏱ ' + f.readTime : '';
+  document.getElementById('modalBody').innerHTML = f.body ?
+richTextToHtml(f.body) : '<p>Full article content coming soon.</p>';
+
+  const modal = document.getElementById('blogModal');
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  gsap.fromTo('#blogModalInner', {opacity:0,y:40}, {opacity:1,y:0,duration:0.45,ease:'power3.out'});
+}
+
+function closeBlogModal() {
+  const modal = document.getElementById('blogModal');
+  gsap.to('#blogModalInner', {opacity:0,y:30,duration:0.3,ease:'power2.in',onComplete:()=>{
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }});
+}
+
+// Close modal on backdrop click
+document.getElementById('blogModal').addEventListener('click', function(e) {
+  if (e.target === this) closeBlogModal();
+});
+// Close on Escape key
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBlogModal(); });
+// Fetch posts from Contentful
+async function loadBlogPosts() {
+  try {
+    const url = `${CONTENTFUL_API}?content_type=blogPost&order=-fields.publishedDate&limit=10&include=1`;
+const res = await fetch(url, {
+      headers: { 'Authorization': `Bearer ${CONTENTFUL_TOKEN}` }
+    });
+if (!res.ok) throw new Error('API error ' + res.status);
+    const data = await res.json();
+    const posts = data.items || [];
+// Build asset lookup map: assetId → image URL
+    const assetMap = {};
+if (data.includes && data.includes.Asset) {
+      data.includes.Asset.forEach(asset => {
+        if (asset.fields && asset.fields.file) {
+          assetMap[asset.sys.id] = 'https:' + asset.fields.file.url;
+        }
+      });
+}
+    window._cfAssets = assetMap; // store globally for modal use
+
+    document.getElementById('blogLoading').style.display = 'none';
+if (posts.length === 0) {
+      document.getElementById('blogEmpty').style.display = 'block';
+      return;
+}
+
+    // Resolve coverImage URL for a post
+    function getImageUrl(post) {
+      const f = post.fields;
+if (f.coverImage && f.coverImage.sys && assetMap[f.coverImage.sys.id]) {
+        return assetMap[f.coverImage.sys.id];
+}
+      return null;
+    }
+
+    // Featured (post 0)
+    const mainGrid = document.getElementById('blogMainGrid');
+mainGrid.innerHTML = buildFeaturedCard(posts[0], getImageUrl(posts[0]));
+
+    // Side posts (posts 1 & 2)
+    if (posts.length > 1) {
+      const sideWrap = document.createElement('div');
+sideWrap.style.cssText = 'display:flex;flex-direction:column;gap:24px;';
+      sideWrap.innerHTML = buildSideCard(posts[1], getImageUrl(posts[1]));
+      if (posts.length > 2) sideWrap.innerHTML += buildSideCard(posts[2], getImageUrl(posts[2]));
+      mainGrid.appendChild(sideWrap);
+}
+
+    // Small cards (posts 3–6)
+    const smallPosts = posts.slice(3, 7);
+const smallGrid = document.getElementById('blogSmallGrid');
+    if (smallPosts.length > 0) {
+      smallGrid.innerHTML = smallPosts.map(p => buildSmallCard(p, getImageUrl(p))).join('');
+} else {
+      smallGrid.style.display = 'none';
+    }
+
+    document.getElementById('blogContent').style.display = 'block';
+// Re-trigger GSAP reveals for newly inserted elements
+    gsap.utils.toArray('#blogContent .reveal, #blogContent .reveal-left, #blogContent .reveal-right').forEach(el => {
+      gsap.fromTo(el, {opacity:0,y:40}, {opacity:1,y:0,duration:0.8,ease:'power3.out',
+        scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}
+      });
+    });
+} catch (err) {
+    console.error('Contentful fetch error:', err);
+    document.getElementById('blogLoading').style.display = 'none';
+    document.getElementById('blogError').style.display = 'block';
+  }
+}
+
+loadBlogPosts();
+// ===== BLOG NEWSLETTER =====
+
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+  anchor.addEventListener('click',function(e){
+    const target=document.querySelector(this.getAttribute('href'));
+    if(target){
+      e.preventDefault();
+      gsap.to(window,{scrollTo:{y:target,offsetY:90},duration:1.2,ease:'power3.inOut'});
+    }
+  });
+});
+
+const serviceLinks = [
+"https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20want%20assistance%20for%20GST%20Advisory%20services.",
+"https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20need%20Accounting%20%26%20Bookkeeping%20services.",
+"https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20want%20help%20with%20Income%20Tax%20Return%20filing.",
+"https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20need%20International%20Taxation%20services.",
+"https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20am%20interested%20in%20Corporate%20Services.",
+"https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20need%20Audit%20services.",
+"https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20want%20Management%20Consulting%20services.",
+"https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20am%20interested%20in%20Business%20Process%20Outsourcing%20services."
+];
+
+document.querySelectorAll('.svc-tab-btn').forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    document.getElementById('svcCtaLink').href = serviceLinks[index];
+  });
+});
+</script>
+</body>
+</html>
