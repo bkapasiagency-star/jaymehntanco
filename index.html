@@ -220,8 +220,55 @@ body::before{
 }
 
 .hero-desc{
-  font-size:17px;line-height:1.85;color:var(--text-mid);
   margin-bottom:40px;max-width:540px;
+}
+.hero-service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.hero-service-tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: rgba(11,87,208,0.07);
+  border: 1px solid rgba(11,87,208,0.15);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.3px;
+}
+.hero-subtitle {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-mid);
+}
+.footer-service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.footer-service-tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.3px;
+}
+.footer-brand-sub {
+  font-size: 13px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.55);
+  max-width: 300px;
+  margin-bottom: 28px;
 }
 
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
@@ -613,7 +660,6 @@ section{padding:120px 0;}
 .office-masonry{
   display:grid;
   grid-template-columns:1fr 1fr;
-  grid-template-rows:auto auto;
   gap:20px;
 }
 .office-img{
@@ -622,9 +668,8 @@ section{padding:120px 0;}
 }
 .office-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;}
 .office-img:hover img{transform:scale(1.04);}
-.office-img-1{grid-row:span 2;height:640px;}
-.office-img-2{height:300px;}
-.office-img-3{height:324px;}
+.office-img-1{height:560px;}
+.office-img-2{height:560px;}
 .office-overlay{
   position:absolute;inset:0;
   background:linear-gradient(to top,rgba(11,45,107,0.5),transparent);
@@ -1194,6 +1239,100 @@ align-items:center;}
   box-shadow:var(--shadow-md);
 }
 
+.svc-sw-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 16px;
+  box-shadow: var(--shadow-sm);
+  height: 44px;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.svc-sw-logo:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.svc-sw-logo img {
+  height: 24px;
+  width: auto;
+  max-width: 110px;
+  object-fit: contain;
+  display: block;
+}
+.svc-sw-fallback {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== INDUSTRY SPECIALIZATION ===== */
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.industry-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.industry-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11,87,208,0.04), rgba(19,198,83,0.04));
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.industry-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(11,87,208,0.2);
+}
+.industry-card:hover::before { opacity: 1; }
+.industry-icon {
+  font-size: 40px;
+  margin-bottom: 14px;
+  line-height: 1;
+  display: block;
+}
+.industry-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.industry-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+.industry-card--more {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  border-color: transparent;
+}
+.industry-card--more .industry-name,
+.industry-card--more .industry-desc { color: rgba(255,255,255,0.9); }
+.industry-card--more .industry-desc { color: rgba(255,255,255,0.65); }
+.industry-card--more:hover { border-color: transparent; }
+
+@media(max-width:1024px) { .industry-grid { grid-template-columns: repeat(3,1fr); } }
+@media(max-width:768px)  { .industry-grid { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:480px)  { .industry-grid { grid-template-columns: 1fr 1fr; gap:14px; } }
+
 /* ===== ANIMATIONS ===== */
 .reveal{opacity:0;transform:translateY(40px);}
 .reveal-left{opacity:0;transform:translateX(-40px);}
@@ -1238,7 +1377,7 @@ align-items:center;}
 }
   .office-masonry{grid-template-columns:1fr;}
   .office-img-1{height:320px;grid-row:span 1;}
-  .office-img-2,.office-img-3{height:260px;}
+  .office-img-2{height:320px;}
   .footer-grid{grid-template-columns:1fr;}
   .contact-info,.contact-form-wrap{padding:36px 28px;}
   .cta-banner{padding:56px 32px;}
@@ -1279,6 +1418,7 @@ align-items:center;}
     <a href="#hero">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#industries">Industries</a>
     <a href="#testimonials">Reviews</a>
     <a href="#blog">Blog</a>
     <a href="#contact">Contact</a>
@@ -1312,21 +1452,28 @@ align-items:center;}
       <div class="hero-left">
         <div class="hero-badge">
           <div class="badge-dot"></div>
-          <span>Trusted by 500+ businesses</span> Across Surat & India
+          <span>Trusted By 1000+ Businesses</span> <a href="https://maps.app.goo.gl/vNKaYredZzN2s7749" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px dashed currentColor;opacity:0.8;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Across Surat &amp; India</a>
         </div>
 
         <div class="hero-eyebrow">CA Jay Mehta — FCA · CMA · DISA · B.Com</div>
 
  
        <h1>
-          Building Your<br>
+          "Building Your<br>
           <em>Financial Foundation</em><br>
-          <span class="accent-line">For A Better Tomorrow.</span>
+          <span class="accent-line">For A Better Tomorrow."</span>
         </h1>
 
-        <p class="hero-desc">
-          Premier Chartered Accountancy firm in Surat delivering expert GST, Taxation, Audit, Corporate Law & International Tax solutions with precision and integrity.
-</p>
+        <div class="hero-desc">
+          <div class="hero-service-tags">
+            <span>Chartered Accountants</span>
+            <span>GST</span>
+            <span>Income Tax</span>
+            <span>Audit</span>
+            <span>Virtual CFO</span>
+          </div>
+          <p class="hero-subtitle">Helping Businesses in India, USA, AUS, UK &amp; UAE with Compliance, Accounting and Strategic Financial Management.</p>
+        </div>
 
         <div class="hero-btns">
           <a href="tel:+918690611515" class="btn-primary"><span>📞 Call Office Directly</span></a>
@@ -1334,11 +1481,11 @@ align-items:center;}
         </div>
 
         <div class="hero-trust">
-          <div class="trust-item"><span class="trust-icon">⚖️</span> ICAI Member</div>
-          <div class="trust-item"><span class="trust-icon">🏆</span> 500+ Clients</div>
-          <div class="trust-item"><span class="trust-icon">📍</span> Surat, Gujarat</div>
+          <div class="trust-item"><img src="ICAI_Logo.jpg" alt="ICAI Logo" style="height:28px;width:28px;object-fit:contain;"> ICAI Member</div>
+          <div class="trust-item"><span class="trust-icon">🏆</span> 1500+ Clients</div>
+          <a href="https://maps.app.goo.gl/pidZTGtm3us3fkaGA" target="_blank" class="trust-item" style="text-decoration:none;color:inherit;"><span class="trust-icon">📍</span> Surat, Gujarat</a>
    
-       <div class="trust-item"><span class="trust-icon">✅</span> 9+ Years Exp.</div>
+       <div class="trust-item"><span class="trust-icon">✅</span> Since 2017</div>
         </div>
       </div>
 
@@ -1350,7 +1497,7 @@ align-items:center;}
 
         <div class="hero-float-card float-card-1 glass-card">
           
-<div class="fc-num counter" data-target="1000" data-suffix="+">1000+</div>
+<div class="fc-num counter" data-target="5000" data-suffix="+">5000+</div>
           <div class="fc-label">Happy Clients Served</div>
         </div>
 
@@ -1362,7 +1509,7 @@ align-items:center;}
         <div class="hero-float-card float-card-3 glass-card">
           <div class="stars">★★★★★</div>
           
-<div class="fc-text">5.0 Rating</div>
+<div class="fc-text">4.8 Rating</div>
           <div class="fc-sub">Google Reviews</div>
         </div>
       </div>
@@ -1404,7 +1551,7 @@ class="stat-card-inner">
       </div>
       <div class="stat-item">
         <div class="stat-card-inner">
-          <div class="stat-num Cormorant-Garamond"><span class="counter" data-target="1000" data-suffix="+">1,000+</span></div>
+          <div class="stat-num Cormorant-Garamond"><span class="counter" data-target="5000" data-suffix="+">5,000+</span></div>
           <div class="stat-label">Happy Clients</div>
         </div>
       </div>
@@ -1443,7 +1590,7 @@ class="stat-card-inner">
 
       <div class="about-right reveal-right">
         <div class="section-label">About Us</div>
-        <h2 class="section-title">Meet <em>CA Jay Mehta</em></h2>
+        <h2 class="section-title"><em>CA Jay Mehta</em></h2>
 
         <div class="about-credentials">
           <div class="cred-pill">FCA</div>
@@ -1470,7 +1617,7 @@ class="stat-card-inner">
 
         <div class="about-features">
           <div class="about-feat">
-            <div class="feat-icon">⚖️</div>
+            <div class="feat-icon" style="background:none;padding:0;"><img src="ICAI_Logo.jpg" alt="ICAI Logo" style="height:44px;width:44px;object-fit:contain;"></div>
             <div>
               <div class="feat-text">ICAI Certified</div>
               <div class="feat-sub">Fully licensed & registered</div>
@@ -1502,10 +1649,6 @@ class="stat-card-inner">
           </div>
         </div>
 
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a 
-href="tel:+918690611515" class="btn-primary"><span>📞 Speak with an Expert</span></a>
-        </div>
       </div>
     </div>
   </div>
@@ -1518,14 +1661,7 @@ href="tel:+918690611515" class="btn-primary"><span>📞 Speak with an Expert</sp
         <div class="section-label">What We Do</div>
         <h2 class="section-title">Our <em>Expert</em><br>Services</h2>
       </div>
-      <div>
-        <p class="section-desc">Comprehensive financial & legal solutions tailored for businesses across India.
-Each service delivered with expertise, accuracy and care.</p>
-        <br>
-        <a href="tel:+918690611515" class="btn-outline" style="display:inline-flex;">
-          <span>Request Custom Call →</span>
-        </a>
-      </div>
+      <div></div>
     </div>
 
     <div class="services-dashboard reveal-scale">
@@ -1559,6 +1695,25 @@ Filing</div>
           
     <div class="svc-list-item">Department Representation</div>
             </div>
+
+            <!-- Software Logos Strip -->
+            <div id="svcSoftwareLogos" style="display:none;margin-bottom:24px;">
+              <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;">Software We Work With</p>
+              <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+                <div class="svc-sw-logo">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Tally_Solutions_logo.svg/200px-Tally_Solutions_logo.svg.png" alt="Tally" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                  <div class="svc-sw-fallback" style="display:none;">🧮 Tally</div>
+                </div>
+                <div class="svc-sw-logo">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Intuit_QuickBooks_logo.svg/200px-Intuit_QuickBooks_logo.svg.png" alt="QuickBooks" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                  <div class="svc-sw-fallback" style="display:none;">📊 QuickBooks</div>
+                </div>
+                <div class="svc-sw-logo">
+                  <img src="https://www.zohowebstatic.com/sites/zweb/images/books/books-logo.png" alt="Zoho Books" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                  <div class="svc-sw-fallback" style="display:none;">📒 Zoho Books</div>
+                </div>
+              </div>
+            </div>
             <a 
   href="https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20want%20assistance%20for%20GST%20services."
 target="_blank"
@@ -1575,17 +1730,71 @@ target="_blank"
       </div>
     </div>
 
-    <div style="text-align:center;margin-top:64px;">
-      <p style="color:var(--text-mid);font-size:17px;margin-bottom:24px;">Not sure which service you need?
-Let's have a free conversation.</p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="tel:+918690611515" class="btn-primary"><span>📞 Call for Free Evaluation</span></a>
-      </div>
-    </div>
   </div>
 </section>
 
-<section id="testimonials">
+<!-- ===== INDUSTRY SPECIALIZATION ===== -->
+<section id="industries" style="background:linear-gradient(180deg,#EDF2FB 0%,var(--lighter-bg) 100%);padding:80px 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px;">
+      <div class="section-label" style="justify-content:center;">Who We Serve</div>
+      <h2 class="section-title" style="text-align:center;">Industry <em>Specialization</em></h2>
+      <p style="font-size:16px;color:var(--text-mid);margin-top:12px;">Deep domain expertise across the industries that matter most in India &amp; globally.</p>
+    </div>
+
+    <div class="industry-grid">
+
+      <div class="industry-card">
+        <div class="industry-icon">💎</div>
+        <div class="industry-name">Gems &amp; Jewellery</div>
+        <div class="industry-desc">GST, valuation, export compliance &amp; ITC for the diamond &amp; jewellery trade</div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">🏭</div>
+        <div class="industry-name">Manufacturing</div>
+        <div class="industry-desc">Cost audits, inventory accounting &amp; tax structuring for manufacturers</div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">🌐</div>
+        <div class="industry-name">Exporters</div>
+        <div class="industry-desc">FEMA, DGFT, GST refunds &amp; international tax for export-oriented businesses</div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">🛒</div>
+        <div class="industry-name">Traders</div>
+        <div class="industry-desc">End-to-end GST compliance, bookkeeping &amp; ITC optimisation for trading firms</div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">📦</div>
+        <div class="industry-name">E-Commerce</div>
+        <div class="industry-desc">TCS compliance, marketplace reconciliation &amp; multi-state GST management</div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">👔</div>
+        <div class="industry-name">Professionals</div>
+        <div class="industry-desc">ITR filing, tax planning &amp; presumptive taxation for doctors, lawyers &amp; consultants</div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-icon">🤝</div>
+        <div class="industry-name">NGOs &amp; Trusts</div>
+        <div class="industry-desc">80G/12A registration, FCRA compliance &amp; audit for charitable organisations</div>
+      </div>
+
+      <div class="industry-card industry-card--more">
+        <div class="industry-icon">✨</div>
+        <div class="industry-name">&amp; Many More</div>
+        <div class="industry-desc">Startups, CPA firms, NRIs, real estate, healthcare &amp; service businesses</div>
+      </div>
+
+    </div>
+  </div>
+</section>
   <div class="container">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;flex-wrap:wrap;gap:24px;">
       <div>
@@ -1596,7 +1805,7 @@ Let's have a free conversation.</p>
       <div>
         <div style="display:flex;gap:4px;font-size:32px;color:#F59E0B;margin-bottom:8px;">★★★★★</div>
    
-     <p style="font-size:14px;color:var(--text-mid);font-weight:600;">5.0 Stars · 100+ Google Reviews</p>
+     <p style="font-size:14px;color:var(--text-mid);font-weight:600;">4.8 Stars · 100+ Google Reviews</p>
       </div>
     </div>
 
@@ -1605,7 +1814,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Jay Mehta & Co. has been an absolute game-changer for Sukhsagar Gems. Their GST advisory is spot-on and they handle our compliance with exceptional precision. Highly trustworthy and always available when we need them most."</p>
+          <p class="testi-text">"Jay Mehta & Co. reduced our GST burden by 90% at Sukhsagar Gems. We were stuck with wrongly claimed ITC and mounting notices — they resolved it all, restructured our compliance, and now we never miss a deadline."</p>
           <div class="testi-author">
             <div class="testi-avatar">D</div>
             <div>
@@ -1617,7 +1826,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"As a Director, I need a CA who understands corporate compliance inside out. Jay Mehta & Co. delivers exactly that — from ROC filings to corporate tax planning, they handle everything flawlessly. A true partner for our growth."</p>
+          <p class="testi-text">"Jay Mehta & Co. saved DKG Pvt. Ltd. from a major ROC penalty. Our past filings were non-compliant and we faced potential strike-off. They stepped in, regularised everything, and built a clean compliance calendar for us going forward."</p>
           <div class="testi-author">
             <div class="testi-avatar">N</div>
             <div>
@@ -1629,7 +1838,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Running a print business means tight margins and complex GST on inputs. Jay Mehta & Co. not only streamlined our bookkeeping but also maximised our input tax credit. Their team is proactive, sharp, and always on time."</p>
+          <p class="testi-text">"Jay Mehta & Co. recovered ₹3.2 lakh in input tax credit for Print Point that we had written off as lost. Our books were messy and ITC was leaking — they cleaned it all up and saved us more than their entire annual fee."</p>
           <div class="testi-author">
             <div class="testi-avatar">R</div>
             <div>
@@ -1641,7 +1850,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Sarvashwa Graphics has grown significantly and Jay Mehta & Co. has been with us every step of the way. Their accounting and tax advisory is impeccable. I trust them completely with our financials — zero hassles, zero errors."</p>
+          <p class="testi-text">"Jay Mehta & Co. helped Sarvashwa Graphics survive a tax audit without paying a single rupee extra. We were scared of the notices and had no proper records — they reconstructed our accounts and handled the department expertly."</p>
           <div class="testi-author">
             <div class="testi-avatar">S</div>
             <div>
@@ -1653,7 +1862,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Import-export businesses have complex GST and FEMA requirements, and Jay Mehta & Co. handles all of it with remarkable expertise. CA Jay Mehta's knowledge of international taxation has been invaluable to Suraj Impex. Truly excellent service."</p>
+          <p class="testi-text">"Jay Mehta & Co. cut Suraj Impex's international tax liability by 40% through proper FEMA structuring and DTAA benefits. We were overpaying on remittances without even knowing it — they identified the issue and fixed it immediately."</p>
           <div class="testi-author">
             <div class="testi-avatar">C</div>
             <div>
@@ -1665,7 +1874,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Jay Mehta & Co. made my income tax filing completely stress-free. They are thorough, honest, and always ensure maximum legitimate savings. I recommend them to everyone I know who needs a reliable and professional CA."</p>
+          <p class="testi-text">"Jay Mehta & Co. got me a ₹78,000 income tax refund I didn't know I was owed. I had been filing my own ITR for years and missing deductions. They reviewed three years of returns, filed revised filings, and recovered every rupee."</p>
           <div class="testi-author">
             <div class="testi-avatar">R</div>
             <div>
@@ -1677,7 +1886,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Outstanding service from Jay Mehta & Co.! My ITR filings and tax planning are handled with great care and attention to detail. The team is responsive and always clarifies every doubt patiently. Couldn't ask for a better CA firm."</p>
+          <p class="testi-text">"Jay Mehta & Co. helped me close a ₹1.2 lakh income tax demand notice that was haunting me for two years. I had no idea how to respond to the department — they handled everything end to end and got it fully resolved."</p>
           <div class="testi-author">
             <div class="testi-avatar">R</div>
             <div>
@@ -1689,7 +1898,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"As a fellow CA, I hold Jay Mehta & Co. to the highest standards — and they consistently exceed them. Their GST advisory and audit work is meticulous and well-documented. A firm that upholds the true spirit of the profession."</p>
+          <p class="testi-text">"Jay Mehta & Co. identified a GST classification error in my client's books that could have led to a ₹5 lakh demand. Their audit was thorough and caught what others missed — a firm that truly raises the bar for our profession."</p>
           <div class="testi-author">
             <div class="testi-avatar">A</div>
             <div>
@@ -1701,7 +1910,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Jay Mehta & Co. provides top-tier financial advisory and tax planning. Their depth of knowledge is impressive and their execution is even better. My accounts have never been more organised. Highly recommended to any serious business owner."</p>
+          <p class="testi-text">"Jay Mehta & Co. reduced my annual tax outflow by ₹2.4 lakh through smart restructuring of my business income. I was paying full tax with no planning — they showed me legal ways to save that my previous CA had completely overlooked."</p>
           <div class="testi-author">
             <div class="testi-avatar">D</div>
             <div>
@@ -1725,7 +1934,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Excellent CA firm with deep expertise. Jay Mehta & Co. handles my GST returns and income tax filings seamlessly every year. The team is always reachable, deadline-conscious, and delivers work of the highest quality. Very satisfied."</p>
+          <p class="testi-text">"Jay Mehta & Co. helped my trading business avoid a ₹90,000 late GST penalty by identifying and fixing our filing errors before the deadline. We didn't even realise we were non-compliant — their proactive review saved us."</p>
           <div class="testi-author">
             <div class="testi-avatar">F</div>
             <div>
@@ -1737,7 +1946,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Jay Mehta & Co. has been managing our accounts and GST compliance for years. Their structured approach and attention to detail give us complete peace of mind. A CA firm that truly understands the ground realities of running a business."</p>
+          <p class="testi-text">"Jay Mehta & Co. untangled three years of messy accounts for my business that two previous accountants had left in chaos. We couldn't even get a bank loan — after they cleaned everything up, we secured ₹25 lakh in credit within a month."</p>
           <div class="testi-author">
             <div class="testi-avatar">B</div>
             <div>
@@ -1749,7 +1958,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Professional, punctual, and precise — that's how I describe Jay Mehta & Co. They have brought tremendous clarity to my tax and compliance matters. I never have to worry about deadlines or notices anymore. Superb team and superb service."</p>
+          <p class="testi-text">"Jay Mehta & Co. helped me respond to an income tax scrutiny notice in just 48 hours. I was panicking and had no documents in order — they guided me step by step, prepared everything perfectly, and the case was dropped."</p>
           <div class="testi-author">
             <div class="testi-avatar">J</div>
             <div>
@@ -1761,7 +1970,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"I've relied on Jay Mehta & Co. for all my tax and accounting needs and they have never disappointed. Their transparent communication and deep expertise make them stand out. A firm you can trust completely with your financial affairs."</p>
+          <p class="testi-text">"Jay Mehta & Co. helped me save ₹1.8 lakh in taxes by restructuring how I draw income from my firm. I had never thought about tax planning beyond basic deductions — their advice was practical, legal, and made an immediate difference."</p>
           <div class="testi-author">
             <div class="testi-avatar">A</div>
             <div>
@@ -1773,7 +1982,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Jay Mehta & Co. has been instrumental in keeping our compliance flawless. Their audit and advisory support is thorough and incredibly well-timed. I appreciate how they break down complex tax matters into simple, actionable guidance. Five stars without hesitation."</p>
+          <p class="testi-text">"Jay Mehta & Co. helped Vaghela Enterprises pass a statutory audit that we had been failing for two years. Our internal records were incomplete and we feared regulatory action — they fixed the gaps and got us a clean audit report."</p>
           <div class="testi-author">
             <div class="testi-avatar">A</div>
             <div>
@@ -1785,7 +1994,7 @@ Let's have a free conversation.</p>
 
         <div class="testi-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"The level of service Jay Mehta & Co. provides is truly exceptional. From income tax planning to GST advisory, they cover every angle with expertise and care. My financial matters are in the best possible hands. I recommend them wholeheartedly."</p>
+          <p class="testi-text">"Jay Mehta & Co. helped me file four years of pending ITRs without facing a single penalty. I had ignored filing for years out of fear — they assessed my situation, applied the right provisions, and brought me fully compliant with no stress."</p>
           <div class="testi-author">
             <div class="testi-avatar">V</div>
             <div>
@@ -1811,7 +2020,7 @@ Let's have a free conversation.</p>
   <div class="container">
     <div style="text-align:center;margin-bottom:64px;">
       <div class="section-label" style="justify-content:center;">Our Space</div>
-      <h2 class="section-title" style="text-align:center;">A Workspace Built for<br><em>Excellence</em></h2>
+      <h2 class="section-title" style="text-align:center;">"Building Your Financial Foundation<br><em>For A Better Tomorrow."</em></h2>
       <p class="section-desc" style="margin:16px auto 0;text-align:center;">Modern, professional and meticulously designed 
 to deliver the best client experience in Surat.</p>
     </div>
@@ -1825,15 +2034,10 @@ to deliver the best client experience in Surat.</p>
         <img src="pic4.jpg" alt="CA Jay Mehta Work Cabin">
         <div class="office-overlay"><span>🪑 Principal's Cabin</span></div>
       </div>
- 
-     <div class="office-img office-img-3">
-        <img src="pic3.jpg" alt="CA Jay Mehta Chartered Accountant">
-        <div class="office-overlay"><span>👔 CA Jay Mehta — FCA, CMA</span></div>
-      </div>
     </div>
 
     <div style="text-align:center;margin-top:48px;">
-      <a href="https://maps.google.com/?q=Surat,Gujarat" target="_blank" class="btn-outline">📍 Visit Us in Surat</a>
+      <a href="https://maps.app.goo.gl/pidZTGtm3us3fkaGA" target="_blank" class="btn-outline">📍 Visit Us in Surat</a>
     </div>
   </div>
 </section>
@@ -1916,7 +2120,7 @@ Book a Free Consultation</span></a>
 
 <div class="container">
   <div class="cta-banner reveal-scale">
-    <h2>Ready to Secure Your<br>Financial Future?</h2>
+    <h2>"Building Your Financial Foundation<br>For A Better Tomorrow."</h2>
     <p>Book a free consultation today.
 No obligations, just expert advice.</p>
     <div class="cta-banner-btns">
@@ -1959,7 +2163,7 @@ WhatsApp. Our team responds within minutes during business hours.</p>
             <div class="ci-icon">📍</div>
             <div class="ci-detail">
               <strong>Office</strong>
-              Surat, Gujarat, India
+              <a href="https://maps.app.goo.gl/vkr9NjaDWJkRg3767" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px dashed rgba(255,255,255,0.4);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">Jeevandeep Complex, U-17, Ring Rd,<br>Nr. Nirmal Hospital, Sagrampura,<br>Surat, Gujarat 395002</a>
             </div>
           </div>
           <div class="ci-item">
@@ -2046,8 +2250,13 @@ target="_blank">WhatsApp: +91 86906 11515</a></p>
             <img src="pic1.png" alt="CA India Official Brand Badge" class="ca-badge-footer">
           </div>
         </div>
-        <p>Jay Mehta & Co. is a premier Chartered Accountancy firm in Surat, Gujarat.
-We deliver excellence in taxation, audit, corporate and international financial services.</p>
+        <div class="footer-service-tags">
+          <span>GST</span>
+          <span>Income Tax</span>
+          <span>Audit</span>
+          <span>Virtual CFO</span>
+        </div>
+        <p class="footer-brand-sub">Helping Businesses in India, USA, AUS, UK &amp; UAE with Compliance, Accounting and Strategic Financial Management.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/jaymehtaandco/" 
    class="social-btn" 
@@ -2063,7 +2272,7 @@ We deliver excellence in taxation, audit, corporate and international financial 
     <i class="fab fa-linkedin-in"></i>
 </a>
 
-<a href="https://x.com/CAJayMehta" 
+<a href="https://x.com/JAYMEHTAANDCO" 
    class="social-btn" 
    target="_blank"
    aria-label="X">
@@ -2089,7 +2298,7 @@ We deliver excellence in taxation, audit, corporate and international financial 
     <i class="fas fa-phone"></i>
 </a>
 
-<a href="https://maps.google.com/?q=Surat,Gujarat" 
+<a href="https://maps.app.goo.gl/pidZTGtm3us3fkaGA" 
    class="social-btn" 
    target="_blank"
    aria-label="Location">
@@ -2133,8 +2342,7 @@ href="#services">Audit</a></li>
         <ul>
           <li><a href="tel:+918690611515">📞 +91 86906 11515</a></li>
           <li><a href="mailto:info.jaymehta@gmail.com">✉️ info.jaymehta@gmail.com</a></li>
-          <li>📍 Surat, Gujarat, 
-India</li>
+          <li><a href="https://maps.app.goo.gl/vkr9NjaDWJkRg3767" target="_blank" style="color:inherit;">📍 Jeevandeep Complex, U-17, Ring Rd, Nr. Nirmal Hospital, Sagrampura, Surat 395002</a></li>
           <li>🕐 Mon–Sat: 10 AM–7 PM</li>
         </ul>
         <br>
@@ -2148,6 +2356,7 @@ India</li>
         <ul>
           <li><a href="https://www.incometax.gov.in/iec/foportal/" target="_blank">🏛️ Income Tax of India</a></li>
           <li><a href="https://www.gst.gov.in/" target="_blank">📋 Goods &amp; Service Tax</a></li>
+          <li><a href="https://rbi.org.in/" target="_blank">🏦 Reserve Bank Of India</a></li>
           <li><a href="https://www.dgft.gov.in/CP/" target="_blank">🌐 Director General of Foreign Trade</a></li>
           <li><a href="https://www.udyamregistration.gov.in/" target="_blank">🏭 Ministry of Udyog</a></li>
           <li><a href="https://www.mca.gov.in/" target="_blank">⚖️ Companies Act of India</a></li>
@@ -2155,11 +2364,22 @@ India</li>
       </div>
     </div>
 
+    <!-- Google Maps Embed -->
+    <div style="margin:40px 0 0;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.5!2d72.8311!3d21.1702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e A6f7c3d0d1%3A0x0!2sJeevandeep+Complex+U-17+Ring+Rd+Sagrampura+Surat+Gujarat+395002!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+        width="100%" height="300" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Jay Mehta & Co. Office Location, Surat">
+      </iframe>
+    </div>
+
     <div class="footer-bottom">
       <p>© 2026 Jay Mehta & Co. |
 Chartered Accountants, Surat, Gujarat</p>
-      <p>FCA · CMA · B.Com |
+      <p>FCA · CMA · DISA · B.Com |
 ICAI Registered Firm</p>
+      <p style="margin-top:10px;font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:0.3px;">Website Designed &amp; Developed by <a href="https://www.magolabs.in" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.35);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Mago Labs</a></p>
     </div>
   </div>
 </footer>
@@ -2212,6 +2432,7 @@ points: [
 "Tally & Cloud Accounting",
 "Virtual CFO Support"
 ],
+softwareLogos: true,
 cta: "💬 WhatsApp for Accounting",
 link: "https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20need%20Accounting%20%26%20Bookkeeping%20services%20for%20my%20business."
 },
@@ -2303,7 +2524,7 @@ link: "https://wa.me/918690611515?text=Hello%20Jay%20Mehta%20%26%20Co.%2C%20I%20
 
 {
 title: "Business Process Outsourcing",
-desc: "Reliable outsourcing solutions helping businesses reduce operational burden and focus on growth.",
+desc: "Accounting & Bookkeeping Outsourcing Services for CPA Firms and Businesses Worldwide.",
 points: [
 "Accounting Outsourcing",
 "Payroll Outsourcing",
@@ -2346,6 +2567,11 @@ const data = servicesData[index];
           div.textContent = pt;
           pointsContainer.appendChild(div);
         });
+
+        // Show/hide software logos strip
+        const logosStrip = document.getElementById('svcSoftwareLogos');
+        if (logosStrip) logosStrip.style.display = data.softwareLogos ? 'block' : 'none';
+
         gsap.to(pane, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
       }
     });
